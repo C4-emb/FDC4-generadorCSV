@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "BERGONDO",
+    "direccion_completa": "C/Parroquia de Guísamo, Parc, A9-1. Polígono Industrial de Bergondo",
+    "cp": "15165",
+    "Provincia": "A Coruña",
+    "Localidad": "Bergondo",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "CABANILLAS",
+    "direccion_completa": "C. Francisco de Medina y Mendoza, parcela 23",
+    "cp": "19171",
+    "Provincia": "Guadalajara",
+    "Localidad": "Cabanillas",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "PUEBLA",
+    "direccion_completa": "Poligono avenida da tomada, 44",
+    "cp": "15949",
+    "Provincia": "A Coruña",
+    "Localidad": "Puebla do Caramiñal",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "UNION",
+    "direccion_completa": "Poligono Industrial Prado Ancho, C. Francisco Javier Sáenz de Oiza, 24",
+    "cp": "28810",
+    "Provincia": "Madrid",
+    "Localidad": "Villalbilla",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "ONDU",
+    "direccion_completa": "Pol. Ind, C. los Picones, s/n",
+    "cp": "19208",
+    "Provincia": "Guadalajara",
+    "Localidad": "Alovera",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "KLINGELE",
+    "direccion_completa": "Pla de la Estación s/n",
+    "cp": "08730",
+    "Provincia": "Barcelona",
+    "Localidad": "Santa Margarida i Els Monjos",
+    "Pais": "ESPAÑA"
+  }
+]

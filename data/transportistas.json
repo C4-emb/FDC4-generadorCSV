@@ -1,0 +1,119 @@
+[
+  {
+    "nombre": "José Manuel Gómez Barros",
+    "agencia": "TP68",
+    "dni": "32780457Y",
+    "telefono": "680765055",
+    "tractora": "-",
+    "remolque": "",
+    "observaciones": ""
+  },
+  {
+    "nombre": "Pablo Manuel Carreira Rodríguez",
+    "agencia": "TP68",
+    "dni": "32822005Q",
+    "telefono": "676465380",
+    "tractora": "-",
+    "remolque": "",
+    "observaciones": ""
+  },
+  {
+    "nombre": "Manuel Ángel Lorenzo Abuín",
+    "agencia": "TP68",
+    "dni": "33293628R",
+    "telefono": "621122413",
+    "tractora": "-",
+    "remolque": "",
+    "observaciones": ""
+  },
+  {
+    "nombre": "Daniel Aso Rubio",
+    "agencia": "TP68",
+    "dni": "29136547D",
+    "telefono": "630067626",
+    "tractora": "2470-JNZ",
+    "remolque": "R-8414-BDK",
+    "observaciones": ""
+  },
+  {
+    "nombre": "Enrique Ousinde García",
+    "agencia": "TP68",
+    "dni": "47371225B",
+    "telefono": "621292048",
+    "tractora": "0329-MBB",
+    "remolque": "R-0927-BDF",
+    "observaciones": "Pendiente cambio de camión al nuevo"
+  },
+  {
+    "nombre": "Antonio Torres Valenzuela",
+    "agencia": "TP68",
+    "dni": "07503691X",
+    "telefono": "621194198",
+    "tractora": "2812-JTB",
+    "remolque": "R-0181-BDF",
+    "observaciones": ""
+  },
+  {
+    "nombre": "Esteban Sepúlveda Toledo",
+    "agencia": "TP68",
+    "dni": "06267573G",
+    "telefono": "621194197",
+    "tractora": "-",
+    "remolque": "",
+    "observaciones": "Baja Paternidad por eso no tiene matrícula"
+  },
+  {
+    "nombre": "Davinia Isidro Martínez",
+    "agencia": "TP68",
+    "dni": "09022729J",
+    "telefono": "671388217",
+    "tractora": "8981-JNR",
+    "remolque": "R-1216-BCL",
+    "observaciones": ""
+  },
+  {
+    "nombre": "Miguel Ángel Rodríguez Sánchez",
+    "agencia": "TP68",
+    "dni": "09025219L",
+    "telefono": "621409211",
+    "tractora": "7542-LBZ",
+    "remolque": "R-7893-BCY",
+    "observaciones": "Camión de Esteban, cuando vuelva se matricula el camión nuevo y hay que ver como reorganizan Esteban y Miguel Ángel"
+  },
+  {
+    "nombre": "Francisco Berrojo Ortega",
+    "agencia": "Francisco Berrojo Ortega",
+    "dni": "03100258L",
+    "telefono": "63153106",
+    "tractora": "1155-FHC",
+    "remolque": "R-7364-BBG",
+    "observaciones": ""
+  },
+  {
+    "nombre": "José Mauricio Gómez Marina",
+    "agencia": "José Mauricio Gómez Marina",
+    "dni": "13145662N",
+    "telefono": "616996727",
+    "tractora": "7112-MPL",
+    "remolque": "",
+    "observaciones": "Alternan remolque Poza y Mauricio - R-2487-BCB o R-5916-BDB"
+  },
+  {
+    "nombre": "Daniel Poza Berzosa",
+    "agencia": "Daniel Poza Berzosa",
+    "dni": "25182485S",
+    "telefono": "639673460",
+    "tractora": "2667-MHM",
+    "remolque": "",
+    "observaciones": "Alternan remolque Poza y Mauricio - R-2487-BCB o R-5916-BDB"
+  },
+  {
+    "nombre": "José Cumbraos Valcarce",
+    "agencia": "José Cumbraos Valcarce",
+    "dni": "33835285P",
+    "telefono": "699418752",
+    "tractora": "1126-JKV",
+    "remolque": "R-7224-BBD",
+    "observaciones": ""
+  }
+]

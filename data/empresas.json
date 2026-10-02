@@ -1,0 +1,42 @@
+[
+  {
+    "nombre": "CUBICAJE SL",
+    "cif": "B15921448",
+    "alias": "C4",
+    "direccion_completa": "C/Parroquia de Guísamo, Parc, A9-1. Polígono Industrial de Bergondo 15165, Bergondo, A Coruña, España",
+    "cp": "15165",
+    "Provincia": "A Coruña",
+    "Localidad": "Bergondo",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "DESARROLLOS LOGISTICOS GALLEGOS SL",
+    "cif": "B15947765",
+    "alias": "DL",
+    "direccion_completa": "C/Parroquia de Guísamo, Parc, A9-1. Polígono Industrial de Bergondo, 15165, Bergondo, A Coruña, España",
+    "cp": "15165",
+    "Provincia": "A Coruña",
+    "Localidad": "Bergondo",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "CUBICAJE IBERICA S.L.",
+    "cif": "B70234844",
+    "alias": "CI",
+    "direccion_completa": "C/Parroquia de Guísamo, Parc, A9-1. Polígono Industrial de Bergondo, 15165, Bergondo, A Coruña, España",
+    "cp": "15165",
+    "Provincia": "A Coruña",
+    "Localidad": "Bergondo",
+    "Pais": "ESPAÑA"
+  },
+  {
+    "nombre": "CARTON ATLANTICA SL",
+    "cif": "B70402193",
+    "alias": "CAT",
+    "direccion_completa": "C/Parroquia de Guísamo, Parc, A9-1. Polígono Industrial de Bergondo, 15165, Bergondo, A Coruña, España",
+    "cp": "15165",
+    "Provincia": "A Coruña",
+    "Localidad": "Bergondo",
+    "Pais": "ESPAÑA"
+  }
+]

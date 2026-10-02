@@ -1,0 +1,92 @@
+[
+  {
+    "nombre": "Outeiral, S.L.",
+    "cif": "B15097629",
+    "direccion": "C/ Condado 10.",
+    "cp": "15940",
+    "poblacion": "Puebla del Caramiñal",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Manipulados Mendieta, S.L.",
+    "cif": "B02384139",
+    "direccion": "Polig. Ind. C/ G Parcela 2",
+    "cp": "02600",
+    "poblacion": "Villarobledo",
+    "provincia": "Albacete",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plastigaur, S.A.",
+    "cif": "A20214623",
+    "direccion": "Avda Madre Cándida, s/n",
+    "cp": "20140",
+    "poblacion": "Andoain",
+    "provincia": "Guipúzcoa",
+    "pais": "España"
+  },
+  {
+    "nombre": "Transf. Plásticas ITAL S.L.",
+    "cif": "B09331919",
+    "direccion": "Pol. Ind. Villalonquejar, C/ Montes de Oca nº 9",
+    "cp": "09001",
+    "poblacion": "Burgos",
+    "provincia": "Burgos",
+    "pais": "España"
+  },
+  {
+    "nombre": "Embagal, S.L.",
+    "cif": "B15410244",
+    "direccion": "Polig. Espíritu Santo, C/ Daimler 53",
+    "cp": "15660",
+    "poblacion": "Cambre",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Fab. de Papel e Cartao de Zarrinha, S.A.",
+    "cif": "PT500107220",
+    "direccion": "Rúa da Estacao, nº 26",
+    "cp": "4536-908",
+    "poblacion": "Rio Meao",
+    "provincia": "Portugal",
+    "pais": "Portugal"
+  },
+  {
+    "nombre": "Distribuciones MDO, S.L",
+    "cif": "B15561913",
+    "direccion": "Calle Europa nº 25 Bajo",
+    "cp": "15007",
+    "poblacion": "A Coruña",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Cartonajes Internacional, S.L",
+    "cif": "B48026140",
+    "direccion": "Ctra de Burgos Portugal, Km 129.",
+    "cp": "47080",
+    "poblacion": "Arroyo de la Encomienda",
+    "provincia": "Valladolid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Sociedad Gallega de Polímeros, S.A.",
+    "cif": "A32333296",
+    "direccion": "C/ Ribadavia nº 12",
+    "cp": "36648",
+    "poblacion": "Carballiño",
+    "provincia": "Orense",
+    "pais": "España"
+  },
+  {
+    "nombre": "Spiralpack, Manipulados de Papel,Lda",
+    "cif": "PT506230619",
+    "direccion": "Avenida do Empreendedor no 1305",
+    "cp": "4785-428",
+    "poblacion": "Sao Martinho Bougado",
+    "provincia": "Trofa",
+    "pais": "Portugal"
+  }
+]

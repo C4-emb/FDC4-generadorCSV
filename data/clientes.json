@@ -1,0 +1,2180 @@
+[
+  {
+    "nombre": "Acteco Productos y Servicios SL",
+    "cif": "",
+    "direccion": "Polígono Industrial Derramador, C/ Corretger, 12",
+    "cp": "03440",
+    "poblacion": "Ibi",
+    "provincia": "Alicante",
+    "pais": "España"
+  },
+  {
+    "nombre": "Adecco",
+    "cif": "",
+    "direccion": "Avda. de Madrid, 24",
+    "cp": "19200",
+    "poblacion": "Azuqueca de Henares",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "ALM OYSHO NAEKO",
+    "cif": "",
+    "direccion": "C/ Mare de Déu de Núria, 13-15 (Pol. Ind. Can Calderón)",
+    "cp": "08830",
+    "poblacion": "Sant Boi de Llobregat",
+    "provincia": "Barcelona",
+    "pais": "España"
+  },
+  {
+    "nombre": "ALMACEN CABANILLAS",
+    "cif": "",
+    "direccion": "Polígono Industrial Cabanillas, C/ Francisco Medina y Mendoza",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "ALMACEN DA POBRA",
+    "cif": "",
+    "direccion": "Polígono Industrial da Tomada, Parcela 44",
+    "cp": "15940",
+    "poblacion": "Pobra do Caramiñal, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "ALMACEN DE BERGONDO",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo parc. A9-1",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Aluman Sistemas S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 8",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Alve Lighting, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro, Rúa F",
+    "cp": "15180",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ambito design Group, S.L.U.",
+    "cif": "",
+    "direccion": "Rúa Marqués de Amboage, 12",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Amil Lago Servicios Generales, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo",
+    "cp": "15573",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Antika",
+    "cif": "",
+    "direccion": "Rua da Cruz, 145",
+    "cp": "4585-757",
+    "poblacion": "Rebordosa (Paredes)",
+    "provincia": "Porto",
+    "pais": "PORTUGAL"
+  },
+  {
+    "nombre": "Antika Mobiliário S.A.",
+    "cif": "",
+    "direccion": "Rua da Cruz, 145",
+    "cp": "4585-757",
+    "poblacion": "Rebordosa (Paredes)",
+    "provincia": "Porto",
+    "pais": "PORTUGAL"
+  },
+  {
+    "nombre": "Arteixo telecom, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial de As Somozas, Parcela 1",
+    "cp": "15320",
+    "poblacion": "Pontes de García Rodríguez, As",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Arvato Services Spain, S.A.U.",
+    "cif": "",
+    "direccion": "Avda. de las Naciones, 15 (Plataforma Central Iberum)",
+    "cp": "45200",
+    "poblacion": "Illescas",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "ASIMAR",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bértoa, Rúa do Cobre",
+    "cp": "15105",
+    "poblacion": "Carballo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Aspnais",
+    "cif": "",
+    "direccion": "Rúa Frei Plácido Rei Lemos, s/n",
+    "cp": "27004",
+    "poblacion": "Lugo",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Avicola de Galicia S.A.U",
+    "cif": "",
+    "direccion": "Lugar de Campañó, s/n",
+    "cp": "36157",
+    "poblacion": "Pontevedra",
+    "provincia": "Pontevedra",
+    "pais": "España"
+  },
+  {
+    "nombre": "Bacaladera Gallega S.L.",
+    "cif": "",
+    "direccion": "Muelle de O Freixo, s/n",
+    "cp": "15200",
+    "poblacion": "Noia",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Baicha, S.L.",
+    "cif": "",
+    "direccion": "Vía Edison, 31 (Polígono Industrial del Tambre)",
+    "cp": "15890",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Beon Fashion, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Alovera, Avda. Virgen del Val",
+    "cp": "19200",
+    "poblacion": "Azuqueca de Henares",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Betanzos HB S.L",
+    "cif": "",
+    "direccion": "Carretera N-VI, km 578",
+    "cp": "15300",
+    "poblacion": "Betanzos",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Bo Pizza Food S.L",
+    "cif": "",
+    "direccion": "Rúa San Andrés, 34",
+    "cp": "15001",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "BODEGAS AGUIUNCHO, S.L.",
+    "cif": "",
+    "direccion": "Lugar de Aguiuncho, 8, Moldes",
+    "cp": "36960",
+    "poblacion": "Sanxenxo",
+    "provincia": "Pontevedra",
+    "pais": "España"
+  },
+  {
+    "nombre": "Bodegas Pazo Arreten S.L",
+    "cif": "",
+    "direccion": "Lugar de Arretén, s/n",
+    "cp": "15917",
+    "poblacion": "Padrón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Breogan Motor SL",
+    "cif": "",
+    "direccion": "Polígono Industrial Icaria, Avda. das Mariñas, 280",
+    "cp": "15172",
+    "poblacion": "Oleiros",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "C.C. Carrefour S.A.",
+    "cif": "",
+    "direccion": "C/ Francisco Pérez Carballo, s/n (Alfonso Molina)",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Cafedor, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Rúa 2ª, Parcela E",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Calor Color S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Novo Milladoiro, Rúa das Palmeiras, 34",
+    "cp": "15895",
+    "poblacion": "Ames",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Calor Color, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Novo Milladoiro, Rúa das Palmeiras, 34",
+    "cp": "15895",
+    "poblacion": "Ames",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Carnicas Galban, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela C-15",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Carnicas Galban, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela C-15",
+    "cp": "27640",
+    "poblacion": "Becerreá",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Carpinteria Ramon Garcia S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial de Merelle, Parcela 12",
+    "cp": "15680",
+    "poblacion": "Ordes",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Almacén Puebla",
+    "cif": "",
+    "direccion": "Polígono Industrial de A Tomada, parc. 44",
+    "cp": "15940",
+    "poblacion": "Puebla",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Cartonajes Union, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Bordales, C/ Henares, 12",
+    "cp": "28810",
+    "poblacion": "Villalbilla",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Castro Fariña, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bértoa, Rúa do Cobre, 28",
+    "cp": "15100",
+    "poblacion": "Carballo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Cenor Electrodomesticos, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela D-30",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "CEVA LOGISTICS ESPAÑA, SL",
+    "cif": "",
+    "direccion": "Polígono Industrial de Toledo, C/ Río Jarama, 132",
+    "cp": "45007",
+    "poblacion": "Toledo",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "CHECKPOINT APPAREL LABELING SOLUTIONS SPAIN, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial de Os Capelos, Parcela 3",
+    "cp": "15175",
+    "poblacion": "Carral",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "CHECKPOINT APPAREL LABELING SOLUTIONS SPAIN, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro, Rúa G, Nave 4",
+    "cp": "15182",
+    "poblacion": "Carral",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Claudia Anair Castro Borges",
+    "cif": "",
+    "direccion": "Avenida da Mariña, 22",
+    "cp": "15160",
+    "poblacion": "Sada",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Compacken Machinery",
+    "cif": "",
+    "direccion": "Polígono Industrial El Laurel, C/ Laurel, 14",
+    "cp": "28341",
+    "poblacion": "Valdemoro",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Confecciones El Mehdi, S.L.",
+    "cif": "",
+    "direccion": "Novo Mesoiro, Rúa Ribeira Sacra, 12",
+    "cp": "15190",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Confitería Chané S.L.",
+    "cif": "",
+    "direccion": "Rúa Francisco Añón, 18",
+    "cp": "15009",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Coruñesa de Etiquetas, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parcela B-13",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Couto y Rosende, S.L.",
+    "cif": "",
+    "direccion": "Rúa Panaderas, 32",
+    "cp": "15003",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "CUBICAJE HOLANDA BV",
+    "cif": "",
+    "direccion": "Zuiderzeevaart 82, 8239DK",
+    "cp": "8239DK",
+    "poblacion": "Lelystad",
+    "provincia": "Flevoland",
+    "pais": "PAÍSES BAJOS"
+  },
+  {
+    "nombre": "Cubicaje Holanda BV",
+    "cif": "",
+    "direccion": "Nikkelstraat 22, 8218 MC",
+    "cp": "8218 MC",
+    "poblacion": "Lelystad",
+    "provincia": "Flevoland",
+    "pais": "PAÍSES BAJOS"
+  },
+  {
+    "nombre": "Dairylac S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Melide, Parcela 1-3",
+    "cp": "15800",
+    "poblacion": "Melide",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Dans Rodriguez y Cia, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Novo Milladoiro, Rúa das Palmeiras, 22",
+    "cp": "15181",
+    "poblacion": "Cambre",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "DESARROLLOS LOGÍSTICOS GALLEGOS, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "DIONTEXTNES, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial El Portazgo, Nave 45",
+    "cp": "50410",
+    "poblacion": "Cuarte de Huerva",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Disashop, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Icaria, Avda. das Mariñas, 287",
+    "cp": "15173",
+    "poblacion": "Oleiros",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Dovilabel S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Espíritu Santo, Rúa Isaac Peral, 12",
+    "cp": "15650",
+    "poblacion": "Cambre",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ecodisgal 2000 S.L",
+    "cif": "",
+    "direccion": "Estrada de Catabois, 245",
+    "cp": "15403",
+    "poblacion": "Ferrol",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Edelmiro Juan Conde Losada",
+    "cif": "",
+    "direccion": "Rúa de Abaixo, 14",
+    "cp": "15920",
+    "poblacion": "Rianxo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Electronica y Comunicaciones Noroeste, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Vilar do Colo, Parcela 18",
+    "cp": "15500",
+    "poblacion": "Fene",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Emaap N1, S.L",
+    "cif": "",
+    "direccion": "Calle Grande, 18",
+    "cp": "38670",
+    "poblacion": "Adeje",
+    "provincia": "Santa Cruz de Tenerife",
+    "pais": "España"
+  },
+  {
+    "nombre": "Embutidos Cerqueiro, S.L",
+    "cif": "",
+    "direccion": "Lugar de Morás, 12",
+    "cp": "15144",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Enzos Pizzería, S. L",
+    "cif": "",
+    "direccion": "Rúa da Barreira, 12",
+    "cp": "15001",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Equipamientos para hosteleria Curras y Salgado, SL",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro / O Burgo",
+    "cp": "15174",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Exclusivas New Trends S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Exclusivas Rer, S.L",
+    "cif": "",
+    "direccion": "Ronda de Outeiro, 142",
+    "cp": "15007",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "EXLABESA EXTRUSION PADRON - FACTORIA PICARAÑA",
+    "cif": "",
+    "direccion": "Polígono Industrial da Picaraña, Parcela 1",
+    "cp": "15980",
+    "poblacion": "Padrón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Exlabesa Extrusión Padrón S.L",
+    "cif": "",
+    "direccion": "Lugar Campaña, s/n",
+    "cp": "15980",
+    "poblacion": "Padrón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Fábrica de Conservas A Poveira, S.A.",
+    "cif": "",
+    "direccion": "Parque Industrial de Laúndos, Lote 41",
+    "cp": "4570-311",
+    "poblacion": "Rates (Póvoa de Varzim)",
+    "provincia": "Porto",
+    "pais": "PORTUGAL"
+  },
+  {
+    "nombre": "Fabrica de Papel e Cartao da Zarrinha, S.A",
+    "cif": "",
+    "direccion": "Rua da Zarrinha, 120",
+    "cp": "4536-906",
+    "poblacion": "Santa Maria de Lamas",
+    "provincia": "Aveiro",
+    "pais": "PORTUGAL"
+  },
+  {
+    "nombre": "Fashion Logistics Forwarders,S.A.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Fillo da Cambota, S.L. CASA CUENCA",
+    "cif": "",
+    "direccion": "Rúa Rubalcava, 7",
+    "cp": "15001",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Flevopallet Nagele",
+    "cif": "",
+    "direccion": "Eggestraat 29",
+    "cp": "8308 AB",
+    "poblacion": "Nagele",
+    "provincia": "Flevoland",
+    "pais": "PAÍSES BAJOS"
+  },
+  {
+    "nombre": "Francisco Javier Pérez Couto",
+    "cif": "",
+    "direccion": "Lugar de Boqueixón, s/n",
+    "cp": "15881",
+    "poblacion": "Boqueixón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Frenos Coruña, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela B-34",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Frinsa del Noroeste, S.A",
+    "cif": "",
+    "direccion": "Avda. Ramiro Carregal Rey, 29 (Pol. Ind. Xarás)",
+    "cp": "15969",
+    "poblacion": "Ribeira",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Fynn y Jake S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial A Gándara, Parcela 8",
+    "cp": "15404",
+    "poblacion": "Ferrol",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Galican Sport SL",
+    "cif": "",
+    "direccion": "Polígono Industrial de Acevedo, Parcela F-13",
+    "cp": "15187",
+    "poblacion": "Cerceda",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "GALITRANS 96 S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro",
+    "cp": "15189",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Gerimedical S.L",
+    "cif": "",
+    "direccion": "Vía de Edison, 40 (Polígono Industrial do Tambre)",
+    "cp": "15890",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Grabados F.G 3.0, S.L.",
+    "cif": "",
+    "direccion": "Rúa Pasteur, 14 (Pol. Pocomaco)",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Graficas Garabal, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial do Tambre, Vía Edison",
+    "cp": "15897",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Graficas Mera, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela G-8",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "GROUPE LOGISTICS IDL ESPAÑA S.A.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Espartales, C/ Plata, 1",
+    "cp": "45340",
+    "poblacion": "Ontígola",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "GROUPE LOGISTICS IDL ESPAÑA S.A.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Gonzalo Chacón, C/ Gonzalo Chacón",
+    "cp": "28300",
+    "poblacion": "Aranjuez",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Grupo Comercial Gallego, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial do Tambre, Vía Faraday, 12",
+    "cp": "15890",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Grupo Digalco, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Grupo Napolit S.L - Alcalde Pérez",
+    "cif": "",
+    "direccion": "Rúa Alcalde Pérez Ardá, 39",
+    "cp": "15009",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Grupo Napolit S.L - Santiago",
+    "cif": "",
+    "direccion": "Rúa do Franco, 14",
+    "cp": "15701",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Grupo Napolit S.L - Alcalde Francisco Vazquez",
+    "cif": "",
+    "direccion": "Paseo Marítimo Alcalde Francisco Vázquez, 3",
+    "cp": "15002",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "GXO MARCHAMALO",
+    "cif": "",
+    "direccion": "Avda. Arriaca, 6 (Pol. Ind. Ciudad del Transporte)",
+    "cp": "19180",
+    "poblacion": "Marchamalo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Gyemo, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Os Capelos, Parcela 8",
+    "cp": "15175",
+    "poblacion": "Carral",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Handtex, S.L.U",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Herrajes Formo-3, S.L.L",
+    "cif": "",
+    "direccion": "Ctra. Forcarei, km 1",
+    "cp": "36682",
+    "poblacion": "Estrada, A",
+    "provincia": "Pontevedra",
+    "pais": "España"
+  },
+  {
+    "nombre": "Herramientas de Galicia S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial de Piadela, Parcela 18",
+    "cp": "15166",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "ID LOGISTICS-  ONTIGOLA 4",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Espartales, C/ Plata, 1",
+    "cp": "45340",
+    "poblacion": "Ontígola",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "IDONEEA RETAIL, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Icaria, Avda. das Mariñas",
+    "cp": "15173",
+    "poblacion": "Oleiros",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Imprenta AyR S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Novo Milladoiro, Rúa das Palmeiras, 18",
+    "cp": "15181",
+    "poblacion": "Cambre",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Incoplancor, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 77-B",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Indipunt, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo, Sector 1, Parcela 22",
+    "cp": "15573",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "INDITECAR",
+    "cif": "",
+    "direccion": "Polígono Industrial Gitesa, C/ Canal de Isabel II",
+    "cp": "28814",
+    "poblacion": "Daganzo de Arriba",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "INDITEX EC MARCHAMALO",
+    "cif": "",
+    "direccion": "Avda. Arriaca, 6 (Pol. Ind. Ciudad del Transporte)",
+    "cp": "19180",
+    "poblacion": "Marchamalo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Inditex S.A.",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Inditex S.A.",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15680",
+    "poblacion": "Ordes",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Inditex S.A. (ADECCO)",
+    "cif": "",
+    "direccion": "Avda. de Madrid, 24",
+    "cp": "19200",
+    "poblacion": "Azuqueca de Henares",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Inditex, S.A.",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "INDITEX-ILLESCAS",
+    "cif": "",
+    "direccion": "Avda. de las Naciones, 32 (Plataforma Central Iberum)",
+    "cp": "45200",
+    "poblacion": "Illescas",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Indupanel, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Acevedo, Parcela C-1",
+    "cp": "15185",
+    "poblacion": "Cerceda",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Industrias Gallegas de Panificación, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Industrias San Cayetano, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial El Brizo, C/ Laguna, 1",
+    "cp": "47162",
+    "poblacion": "Aldeamayor de San Martín",
+    "provincia": "Valladolid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Innova Fabricacion y Distr. S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo, Avda. Jesús Fernández Pita",
+    "cp": "15572",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "INTASA  ALMACEN EMBALAJES",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo, Avda. dos Elaboradores",
+    "cp": "15570",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Invernaderos Fertri, S.L.U.",
+    "cif": "",
+    "direccion": "Lugar de Boebre, s/n",
+    "cp": "15614",
+    "poblacion": "Pontedeume",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Iparlux Retrovision, S.L.",
+    "cif": "",
+    "direccion": "Calle del Oro, 38 (Polígono Industrial Sur)",
+    "cp": "28770",
+    "poblacion": "Colmenar Viejo",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Iskay Pet, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Espartales",
+    "cp": "45340",
+    "poblacion": "Ontígola",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ismasa 2009, S.L.",
+    "cif": "",
+    "direccion": "Ronda de Outeiro, 280",
+    "cp": "15010",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "J. G. Professional Tools, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parcela C-12",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "J.R.Baluja, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial do Tambre, Vía Nobel, 33",
+    "cp": "15702",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "JARDANAY, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela H-12",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Jesus A. Tome Sanjurjo - Feitizos de Sabor",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 22",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "JEVASO MECO",
+    "cif": "",
+    "direccion": "Parque Industrial Meco R-2, C/ Moreras",
+    "cp": "28880",
+    "poblacion": "Meco",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Jorge y Conde S.L",
+    "cif": "",
+    "direccion": "Avenida de Finisterre, 240",
+    "cp": "15199",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "JOSE MANUEL BLANCO CHAO",
+    "cif": "",
+    "direccion": "Calle Juan Flórez, 36",
+    "cp": "15004",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Juan Ayerbe El Sumiller, SL",
+    "cif": "",
+    "direccion": "Rúa San José, 4",
+    "cp": "15002",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Juan R. Hidalgo Dominguez",
+    "cif": "",
+    "direccion": "Parque Tecnológico de Andalucía, C/ Severo Ochoa",
+    "cp": "29590",
+    "poblacion": "Málaga",
+    "provincia": "Málaga",
+    "pais": "España"
+  },
+  {
+    "nombre": "Kimak Systems & Design S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro, Rúa H, Nave 10",
+    "cp": "15189",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "LACOR SOLUCIONES INTEGRALES",
+    "cif": "",
+    "direccion": "Calle Bari, 18 (Plataforma Logística PLAZA)",
+    "cp": "50197",
+    "poblacion": "Zaragoza (PLAZA)",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Leroy Merlin España, S.L.U-Meco",
+    "cif": "",
+    "direccion": "Parque Industrial Meco R-2, C/ Moreras",
+    "cp": "28880",
+    "poblacion": "Meco",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Leroy Merlin España, S.L.U-Getafe",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Gavilanes, Av. de los Rosales",
+    "cp": "28906",
+    "poblacion": "Getafe",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Licores Rivas, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial A Gándara, Parcela 12",
+    "cp": "15404",
+    "poblacion": "Ferrol",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "LODISNA CABANILLAS",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Nave 2 (Pol. Ind. Cabanillas)",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Logisfashion Distribucion, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Espartales, C/ Plata, 1",
+    "cp": "45340",
+    "poblacion": "Ontígola",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Logisfashion Ontigola",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Espartales, C/ Plata, 1",
+    "cp": "45340",
+    "poblacion": "Ontígola",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Logisfashion Spain, S.L.-Cabanillas",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 3",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Logisfashion Spain, S.L.-Fontanar",
+    "cif": "",
+    "direccion": "Polígono Industrial de Fontanar",
+    "cp": "19290",
+    "poblacion": "Fontanar",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Lopez y Noya Hosteleros, S.L",
+    "cif": "",
+    "direccion": "Paseo Marítimo de O Burgo, 12",
+    "cp": "15174",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Lositron Sistemas, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Lynne y Gómez, S.L. (O Paso)",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo",
+    "cp": "15570",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Maderas Besteiro S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial O Ceao, Rúa Benigno Rivera, 59",
+    "cp": "27080",
+    "poblacion": "Lugo (O Ceao)",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Madero, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela F-15",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Manxares de Galicia, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de O Pino, Parcela 5",
+    "cp": "15820",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Marta Alameda Lopez",
+    "cif": "",
+    "direccion": "Rúa Monforte, 12",
+    "cp": "27003",
+    "poblacion": "Lugo",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Matías García SL",
+    "cif": "",
+    "direccion": "Rúa Ribados, 14",
+    "cp": "15174",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Mejillones Sabor de Mar,S.L",
+    "cif": "",
+    "direccion": "Lugar de Taragoña, Rúa do Porto",
+    "cp": "15930",
+    "poblacion": "Boiro",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Mercedes Fraga Cambón ( Raxaría As Neves)",
+    "cif": "",
+    "direccion": "Ronda de Outeiro, 300",
+    "cp": "15011",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "MGR TRANSPORTES, LDA",
+    "cif": "",
+    "direccion": "Rua das Marinhas, 52",
+    "cp": "4740-473",
+    "poblacion": "Esposende",
+    "provincia": "Braga",
+    "pais": "PORTUGAL"
+  },
+  {
+    "nombre": "Molduras Vilela, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial San Cibrao das Viñas, C/ Principal",
+    "cp": "32900",
+    "poblacion": "Ourense",
+    "provincia": "Ourense",
+    "pais": "España"
+  },
+  {
+    "nombre": "Mudanzas Felix, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo",
+    "cp": "15573",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Naam Stores, S.L. (Manama)",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Nesuafarma S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Rúa Copérnico, 6",
+    "cp": "15177",
+    "poblacion": "Oleiros",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "New Organics, S.L.  Mice&CO (A-Coruña)",
+    "cif": "",
+    "direccion": "Rúa Copérnico, 6 (Pol. Ind. Pocomaco)",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "New Organics, S.L. Mice&CO (Mesoiro)",
+    "cif": "",
+    "direccion": "Rúa Ribeira Sacra, 25 (Novo Mesoiro)",
+    "cp": "15190",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "NOA",
+    "cif": "",
+    "direccion": "Polígono Industrial Vilar do Colo, Parcela 4",
+    "cp": "15500",
+    "poblacion": "Fene",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Nortconsulting Soluciones S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Novo Campo Plantenes, S.L.",
+    "cif": "",
+    "direccion": "Lugar de Castro, s/n",
+    "cp": "15840",
+    "poblacion": "Santa Comba",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Numa Textil, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "NUTRIHAB FOR YOU S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro",
+    "cp": "15180",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ondu-Embalaje, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial Alovera, Avda. de las Américas, 4",
+    "cp": "19208",
+    "poblacion": "Alovera",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Orama Project, S.L.U",
+    "cif": "",
+    "direccion": "Plaza de Pontevedra, 12",
+    "cp": "15004",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Oscar Viñas Villa y Otro, S.L.",
+    "cif": "",
+    "direccion": "Ronda de Outeiro, 210",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Osmos Sitemas Eléctricos, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro, Rúa E",
+    "cp": "15180",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Oviganic Iberica S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de Chantada, Parcela 22",
+    "cp": "27400",
+    "poblacion": "Chantada",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Oysho, S.A",
+    "cif": "",
+    "direccion": "Ctra. Tordera a Palafolls, km 0,6",
+    "cp": "08490",
+    "poblacion": "Tordera",
+    "provincia": "Barcelona",
+    "pais": "España"
+  },
+  {
+    "nombre": "Pablo Maximiliano Falce",
+    "cif": "",
+    "direccion": "Rúa Pontedeume, 6",
+    "cp": "15160",
+    "poblacion": "Sada",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Padín y Vázquez, S.L.",
+    "cif": "",
+    "direccion": "Camiño dos Muíños, 14",
+    "cp": "36315",
+    "poblacion": "Vigo",
+    "provincia": "Pontevedra",
+    "pais": "España"
+  },
+  {
+    "nombre": "Panrufer S.L",
+    "cif": "",
+    "direccion": "Avda. Arcadio Pardiñas, 124",
+    "cp": "27880",
+    "poblacion": "Burela",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Perfiles Fidalgo, S..L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Celanova, Parcela 6",
+    "cp": "32830",
+    "poblacion": "Merca, A",
+    "provincia": "Ourense",
+    "pais": "España"
+  },
+  {
+    "nombre": "Persianas Roma, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial San Cibrao das Viñas, C/ 2",
+    "cp": "32901",
+    "poblacion": "San Cibrao das Viñas",
+    "provincia": "Ourense",
+    "pais": "España"
+  },
+  {
+    "nombre": "Pescados Orol, S.L.",
+    "cif": "",
+    "direccion": "Puerto de Burela, Edificio Lonja, s/n",
+    "cp": "27880",
+    "poblacion": "Burela",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Pesquera Arcade, S.L.",
+    "cif": "",
+    "direccion": "Muelle de San Diego, Lonja do Gran Sol",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Pesquera Jundiña S.L.",
+    "cif": "",
+    "direccion": "Muelle de San Diego, Lonja do Gran Sol",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "PEYCAR PONTEVEDRA, S.L",
+    "cif": "",
+    "direccion": "Rúa Eduardo Pondal, 64",
+    "cp": "36003",
+    "poblacion": "Pontevedra",
+    "provincia": "Pontevedra",
+    "pais": "España"
+  },
+  {
+    "nombre": "PF Technologies Campe S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de Covas, Nave 3",
+    "cp": "15830",
+    "poblacion": "Negreira",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Piccola Alameda, S.L.",
+    "cif": "",
+    "direccion": "Plaza Hermanos García Naveira, 4",
+    "cp": "15300",
+    "poblacion": "Betanzos",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plana y Cia, S.L.",
+    "cif": "",
+    "direccion": "Ronda de Outeiro, 118",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "PLATAFORMA CABANILLAS",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Cabanillas, S.A",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Cabanillas, S.A",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "PLATAFORMA CABANILLAS, S.A.",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Europa (Jevaso)",
+    "cif": "",
+    "direccion": "Calle Bari, 23 (Plataforma Logística PLAZA)",
+    "cp": "50197",
+    "poblacion": "Zaragoza (PLAZA)",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Europa, S.A.U",
+    "cif": "",
+    "direccion": "Calle Osca, 7 (Plataforma Logística PLAZA)",
+    "cp": "50197",
+    "poblacion": "Zaragoza (PLAZA)",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Logística León, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial de Villadangos, Parcela 1",
+    "cp": "24391",
+    "poblacion": "Chozas de Abajo",
+    "provincia": "León",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Logística Meco, S.A.",
+    "cif": "",
+    "direccion": "Calle de las Moreras, s/n (Parque Industrial Meco R-2)",
+    "cp": "28880",
+    "poblacion": "Meco",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Plataforma Malpica S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Malpica, Calle F Oeste",
+    "cp": "50016",
+    "poblacion": "Zaragoza",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Porcelana de Sargadelos, S.L.",
+    "cif": "",
+    "direccion": "O Castro de Samoedo, s/n",
+    "cp": "15168",
+    "poblacion": "Sada",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Porcelana de Sargadelos, S.L.",
+    "cif": "",
+    "direccion": "Lugar de Sargadelos, s/n",
+    "cp": "27891",
+    "poblacion": "Cervo",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Porta-Fabrica de Cordones S.R.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Prodube, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial O Ceao, Rúa da Industria",
+    "cp": "27004",
+    "poblacion": "Lugo",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Proquiga Biotech, S.A.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parcela A-4",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Puertas Vales S.L.U",
+    "cif": "",
+    "direccion": "Lugar de Piadela, s/n",
+    "cp": "15317",
+    "poblacion": "Aranga",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Pull & Bear Logística, S.A.",
+    "cif": "",
+    "direccion": "Polígono Industrial Río do Pozo, Avda. Gonzalo Navarro",
+    "cp": "15570",
+    "poblacion": "Narón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "QN Power S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro",
+    "cp": "15180",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ramiro Vila S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de Chantada, Parcela 8",
+    "cp": "27400",
+    "poblacion": "Chantada",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Recitor, C.B",
+    "cif": "",
+    "direccion": "Polígono Industrial de Outeiro de Rei, Parcela 4",
+    "cp": "27232",
+    "poblacion": "Lugo",
+    "provincia": "Lugo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Roberto Verino Difusión, S.A.",
+    "cif": "",
+    "direccion": "Polígono Industrial San Cibrao das Viñas, C/ 3, Parcela 1",
+    "cp": "32900",
+    "poblacion": "Ourense",
+    "provincia": "Ourense",
+    "pais": "España"
+  },
+  {
+    "nombre": "ROX Planchado (NO HAY MUELLE)",
+    "cif": "",
+    "direccion": "Avda. de la Constitución, 206",
+    "cp": "28823",
+    "poblacion": "Coslada",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "SAASA GLOBAL",
+    "cif": "",
+    "direccion": "Centro de Carga Aérea Madrid-Barajas, Edificio Servicios",
+    "cp": "28042",
+    "poblacion": "Madrid",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Sdad. Coop. Gallega de Hostelería",
+    "cif": "",
+    "direccion": "Polígono Industrial A Grela / Vío",
+    "cp": "15190",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "SECCION MADERA/MAT. PRIMAS",
+    "cif": "",
+    "direccion": "Polígono Industrial de Acevedo",
+    "cp": "15185",
+    "poblacion": "Cerceda",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Serval Retail y Consumo, S.L",
+    "cif": "",
+    "direccion": "Calle Bari, 29 (Plataforma Logística PLAZA)",
+    "cp": "50197",
+    "poblacion": "Zaragoza (PLAZA)",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Setga, S.L.U.",
+    "cif": "",
+    "direccion": "Polígono Industrial A Reigosa, Parcela 24",
+    "cp": "36828",
+    "poblacion": "Ponte Caldelas",
+    "provincia": "Pontevedra",
+    "pais": "España"
+  },
+  {
+    "nombre": "Severiano Aragonez de salud",
+    "cif": "",
+    "direccion": "Plataforma Logística de Zaragoza (PLAZA)",
+    "cp": "50197",
+    "poblacion": "Zaragoza (PLAZA)",
+    "provincia": "Zaragoza",
+    "pais": "España"
+  },
+  {
+    "nombre": "Severiano Servicio Movil, S.A.U",
+    "cif": "",
+    "direccion": "Polígono Industrial de As Somozas, Parcela 25",
+    "cp": "15320",
+    "poblacion": "Pontes de García Rodríguez, As",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Severiano Servicio Movil, S.A.U (PLAT. LOGISTICA)",
+    "cif": "",
+    "direccion": "Polígono Industrial Villaverde, C/ Valle de Tobalina",
+    "cp": "28021",
+    "poblacion": "Madrid",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Sidipal, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Espíritu Santo, Parcela 24",
+    "cp": "15650",
+    "poblacion": "Cambre",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "SIMEI DIENSTEN, B.V.",
+    "cif": "",
+    "direccion": "Zuiderzeevaart 82, 8239DK",
+    "cp": "8239DK",
+    "poblacion": "Lelystad",
+    "provincia": "Flevoland",
+    "pais": "PAÍSES BAJOS"
+  },
+  {
+    "nombre": "Simei Global Consulting, S.L",
+    "cif": "",
+    "direccion": "Calle Ferrol",
+    "cp": "15165",
+    "poblacion": "A Coruña",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Simei Global Consulting, S.L",
+    "cif": "",
+    "direccion": "Calle O Donnell, 4",
+    "cp": "28009",
+    "poblacion": "Madrid",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Sistemas de Almacenaje de Galicia, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Vío, Parcela 12",
+    "cp": "15190",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Stear, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 104",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "TCM Torrejón (TRANS SESE)",
+    "cif": "",
+    "direccion": "Polígono Industrial Las Monjas, C/ Las Fraguas",
+    "cp": "28850",
+    "poblacion": "Torrejón de Ardoz",
+    "provincia": "Madrid",
+    "pais": "España"
+  },
+  {
+    "nombre": "Teais, S.A.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Morás, Rúa Isaac Peral, 14",
+    "cp": "15143",
+    "poblacion": "Arteixo (Morás)",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Tempe 3, S.A",
+    "cif": "",
+    "direccion": "C/ Severo Ochoa, 29 (Elche Parque Empresarial)",
+    "cp": "03203",
+    "poblacion": "Elche/Elx",
+    "provincia": "Alicante",
+    "pais": "España"
+  },
+  {
+    "nombre": "Teresa Garcia Rojo",
+    "cif": "",
+    "direccion": "Avenida de Galicia, 45",
+    "cp": "24404",
+    "poblacion": "Ponferrada",
+    "provincia": "León",
+    "pais": "España"
+  },
+  {
+    "nombre": "TEXTISA",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 142",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "The Campamento Kidswear, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial Alvedro, Rúa D",
+    "cp": "15180",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Thinktextil, S.L.U",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 104",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "TodoConsolas, S.L.",
+    "cif": "",
+    "direccion": "Rúa Pasteur, 24 (Polígono do Tambre)",
+    "cp": "15190",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Transportes Vedriel",
+    "cif": "",
+    "direccion": "Polígono Industrial La Serreta, C/ Mayor, 42",
+    "cp": "30500",
+    "poblacion": "Molina de Segura",
+    "provincia": "Murcia",
+    "pais": "España"
+  },
+  {
+    "nombre": "Trebol Maquinaria y Suministros, S.A",
+    "cif": "",
+    "direccion": "Polígono Industrial de Ordes, Parcela 15",
+    "cp": "15688",
+    "poblacion": "Oroso",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Troquelados del Noroeste, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial Pocomaco, Parcela D-2",
+    "cp": "15008",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Truck&Wheel",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "TURISMO DE PADRON",
+    "cif": "",
+    "direccion": "Avenida Compostela, s/n",
+    "cp": "15900",
+    "poblacion": "Padrón",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Tutto Oza, S.L.",
+    "cif": "",
+    "direccion": "Avenida de Oza, 88",
+    "cp": "15006",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Tvitec System Glass S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial El Bayo / Villena",
+    "cp": "03400",
+    "poblacion": "Villena",
+    "provincia": "Alicante",
+    "pais": "España"
+  },
+  {
+    "nombre": "Umarex",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Umarex GmbH&Co.Kg",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Universidade de Santiago",
+    "cif": "",
+    "direccion": "Colexio de San Xerome, Praza do Obradoiro, s/n",
+    "cp": "15782",
+    "poblacion": "Santiago de Compostela",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Valper Desechables, S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de Acevedo, Parcela D-8",
+    "cp": "15185",
+    "poblacion": "Cerceda",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Vanessa Vazquez Blanco",
+    "cif": "",
+    "direccion": "Avenida de Galicia, 32",
+    "cp": "15174",
+    "poblacion": "Culleredo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Vazva S.L.",
+    "cif": "",
+    "direccion": "Rúa Real, 72",
+    "cp": "15003",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Velastri S.L",
+    "cif": "",
+    "direccion": "Polígono Industrial de Bergondo, Parroquia de Guísamo",
+    "cp": "15165",
+    "poblacion": "Bergondo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Vidal Cousillas, Jose",
+    "cif": "",
+    "direccion": "Rúa Valdoncel, 12",
+    "cp": "15300",
+    "poblacion": "Betanzos",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Waco Coffee Roasters S.L",
+    "cif": "",
+    "direccion": "Rúa Alameda, 22",
+    "cp": "15003",
+    "poblacion": "Coruña, A",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "XPO Supply Chain Spain, S.L.U. - Marchamalo",
+    "cif": "",
+    "direccion": "Avda. Arriaca, 6 (Pol. Ind. Ciudad del Transporte)",
+    "cp": "19180",
+    "poblacion": "Marchamalo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "XPO Supply Chain Spain, S.L.U. - Ontígola",
+    "cif": "",
+    "direccion": "Polígono Industrial Los Espartales, C/ Plata, 1",
+    "cp": "45340",
+    "poblacion": "Ontígola",
+    "provincia": "Toledo",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home España S.A. (Almacen)-Cabanillas",
+    "cif": "",
+    "direccion": "Av. de la Venta de Mirabueno, 1 (Pol. Ind. Cabanillas)",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home España S.A. (Almacen)-Arteixo",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home España, S.A (Tiendas)-Cabanillas",
+    "cif": "",
+    "direccion": "Av. de la Venta de Mirabueno, 1 (Pol. Ind. Cabanillas)",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home España, S.A (Tiendas)-Arteixo",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home Logistica, S.A. - Cabanillas",
+    "cif": "",
+    "direccion": "Av. de la Venta de Mirabueno, 1 (Pol. Ind. Cabanillas)",
+    "cp": "19171",
+    "poblacion": "Cabanillas del Campo",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home Logística, S.A. - Arteixo",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Home Logística, S.A. -Cabanillas",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1 (Pol. Ind. del Henares)",
+    "cp": "19071",
+    "poblacion": "Guadalajara",
+    "provincia": "Guadalajara",
+    "pais": "España"
+  },
+  {
+    "nombre": "Zara Logistica S.A. - Arteixo",
+    "cif": "",
+    "direccion": "Avda. de la Diputación, Edificio Inditex",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Ziclos Circular Economy, S.L.",
+    "cif": "",
+    "direccion": "Polígono Industrial de Sabón, Parcela 8",
+    "cp": "15142",
+    "poblacion": "Arteixo",
+    "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "LODISNA MECO",
+    "cif": "",
+    "direccion": "Calle Hermes 6",
+    "cp": "28880",
+    "poblacion": "Meco",
+    "provincia": "Madrid",
+    "pais": "España"
+  }
+]

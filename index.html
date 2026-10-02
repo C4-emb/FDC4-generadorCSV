@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Generador eCMR - CUBICAJE</title>
+  <meta name="description" content="Herramienta interna para generar ficheros CSV de eCMR para CUBICAJE S.L." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand: #0f4c81;
+      --brand-l: #1a6bbf;
+      --accent: #f59e0b;
+      --ok: #10b981;
+      --err: #ef4444;
+      --bdr: #e2e8f0;
+    }
+
+    * {
+      font-family: Inter, sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f4c81 0%, #1a3a5c 50%, #0d2137 100%);
+      min-height: 100vh;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, .97);
+      border-radius: 1.25rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+    }
+
+    .step-dot {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .875rem;
+      transition: all .3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .step-dot.active {
+      background: var(--accent);
+      color: #1a1a1a;
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, .25);
+    }
+
+    .step-dot.done {
+      background: var(--ok);
+      color: #fff;
+    }
+
+    .step-dot.pending {
+      background: #334155;
+      color: #94a3b8;
+    }
+
+    .step-line {
+      flex: 1;
+      height: 2px;
+      background: #334155;
+      transition: background .3s;
+    }
+
+    .step-line.done {
+      background: var(--ok);
+    }
+
+    input[type=text],
+    input[type=number],
+    input[type=datetime-local],
+    select,
+    textarea {
+      width: 100%;
+      border-radius: .5rem;
+      border: 1px solid var(--bdr);
+      padding: .5rem .75rem;
+      font-size: .875rem;
+      color: #1e293b;
+      background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--brand-l);
+      box-shadow: 0 0 0 3px rgba(26, 107, 191, .15);
+    }
+
+    label {
+      font-size: .75rem;
+      font-weight: 600;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      display: block;
+      margin-bottom: .3rem;
+    }
+
+    .btn-p {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: .625rem;
+      padding: .6rem 1.5rem;
+      font-size: .875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      box-shadow: 0 4px 14px rgba(15, 76, 129, .35);
+    }
+
+    .btn-p:hover {
+      background: var(--brand-l);
+      transform: translateY(-1px);
+    }
+
+    .btn-a {
+      background: var(--accent);
+      color: #1a1a1a;
+      border: none;
+      border-radius: .625rem;
+      padding: .6rem 1.5rem;
+      font-size: .875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, .3);
+    }
+
+    .btn-a:hover {
+      background: #d97706;
+      transform: translateY(-1px);
+    }
+
+    .btn-d {
+      background: var(--err);
+      color: #fff;
+      border: none;
+      border-radius: .625rem;
+      padding: .35rem .75rem;
+      font-size: .75rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-g {
+      background: transparent;
+      color: var(--brand);
+      border: 1.5px solid var(--brand);
+      border-radius: .625rem;
+      padding: .5rem 1.2rem;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .btn-g:hover {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-g.red {
+      color: #dc2626;
+      border-color: #dc2626;
+    }
+
+    .btn-g.red:hover {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .btn-sm {
+      padding: .35rem .8rem !important;
+      font-size: .78rem !important;
+    }
+
+    .ac-wrap {
+      position: relative;
+    }
+
+    .ac-list {
+      position: absolute;
+      z-index: 999;
+      background: #fff;
+      border: 1px solid var(--bdr);
+      border-radius: .5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+      max-height: 200px;
+      overflow-y: auto;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      top: 100%;
+      left: 0;
+    }
+
+    .ac-list li {
+      padding: .5rem .85rem;
+      cursor: pointer;
+      font-size: .82rem;
+      color: #334155;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .ac-list li:hover {
+      background: #e0f2fe;
+    }
+
+    .ac-list.hidden {
+      display: none;
+    }
+
+    /* Albarán card */
+    .alb-card {
+      background: #f8fafc;
+      border: 1px solid var(--bdr);
+      border-radius: .875rem;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .alb-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .07);
+    }
+
+    /* Mercancía row */
+    .merc-row {
+      background: #fff;
+      border: 1px solid var(--bdr);
+      border-radius: .625rem;
+      padding: .75rem 1rem;
+      margin-bottom: .5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: .2rem .6rem;
+      border-radius: 9999px;
+      font-size: .7rem;
+      font-weight: 600;
+    }
+
+    .b-blue {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .b-green {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .sec-hdr {
+      font-size: .65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #94a3b8;
+      margin-bottom: .6rem;
+      padding-bottom: .4rem;
+      border-bottom: 1px solid var(--bdr);
+    }
+
+    .info-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: .625rem;
+      padding: .6rem .85rem;
+      font-size: .8rem;
+      color: #1e40af;
+      margin-bottom: .75rem;
+    }
+
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .68rem;
+    }
+
+    .preview-table th {
+      background: var(--brand);
+      color: #fff;
+      padding: .45rem .55rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .preview-table td {
+      padding: .35rem .55rem;
+      border-bottom: 1px solid var(--bdr);
+      color: #334155;
+      white-space: nowrap;
+    }
+
+    .preview-table tr:nth-child(even) td {
+      background: #f1f5f9;
+    }
+
+    .pulse {
+      animation: pulse-ring 2s infinite;
+    }
+
+    @keyframes pulse-ring {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(245, 158, 11, .4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+      }
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeSlide .3s ease;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body class="p-4 md:p-8">
+
+  <header class="text-center mb-8">
+    <div class="inline-flex items-center gap-3 mb-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-amber-400" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+      </svg>
+      <h1 class="text-3xl font-bold text-white tracking-tight">Generador <span class="text-amber-400">eCMR</span></h1>
+    </div>
+    <p class="text-slate-300 text-sm">CUBICAJE S.L. &mdash; Carta de porte electr&#243;nica</p>
+  </header>
+
+  <div class="card max-w-5xl mx-auto p-6 md:p-8">
+    <div class="flex items-center mb-8" id="stepper"></div>
+    <div id="step-0" class="hidden"></div>
+    <div id="step-1" class="hidden"></div>
+    <div id="step-2" class="hidden"></div>
+    <div id="step-3" class="hidden"></div>
+
+    <div class="flex justify-between items-center mt-8 pt-6 border-t border-slate-100 flex-wrap gap-3">
+      <div class="flex gap-2 flex-wrap">
+        <button id="btn-prev" class="btn-g" onclick="changeStep(-1)">&larr; Anterior</button>
+        <button class="btn-g btn-sm red" onclick="clearAll()">&#128465; Limpiar</button>
+      </div>
+      <div class="flex gap-2 items-center">
+        <span id="step-counter" class="text-xs text-slate-400 font-medium hidden md:block"></span>
+        <button id="btn-next" class="btn-p" onclick="changeStep(1)">Siguiente &rarr;</button>
+        <button id="btn-dl" class="btn-a pulse hidden" onclick="downloadCSV()">
+          <span class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            Descargar CSV
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    'use strict';
+
+    // ============================================================
+    // DATOS EXTERNOS (cargados desde /data/*.json)
+    // ============================================================
+    var D = { clientes: [], proveedores: [], transportistas: [], empresas: [], almacenes: [], agencias: [] };
+    // Datos de TP68 (empresa de transportistas internos)
+    var TP68 = { razon: 'TP68 S.L.', cif: 'B22433825', dir: 'C/Parroquia de Gu\u00edsamo, Parc, A9-1. Pol\u00edgono Industrial de Bergondo,15165,BERGONDO, A CORU\u00d1A ESPA\u00d1A' };
+
+    // ============================================================
+    // ESTADO
+    // ============================================================
+    function freshState() {
+      return {
+        groupingCode: '',
+        // EMPRESA EXPEDIDORA (nuestra empresa)
+        empresaSel: '',
+        empresa: { nombre: '', cif: '', direccion_completa: '' },
+        // ALMAC\u00c9N DE CARGA
+        almacenSel: '',
+        almacenCustom: false,
+        lugarCarga: '',
+        lugarCargaCP: '',
+        lugarCargaProvincia: '',
+        lugarCargaLocalidad: '',
+        lugarCargaPais: 'ESPA\u00d1A',
+        // ALBARANES \u2014 cada uno lleva sus propias l\u00edneas de mercanc\u00eda
+        albaranes: [freshAlb()],
+        // PARTICIPANTES
+        destinatario: { nombre: '', cif: '', direccion: '', cp: '', poblacion: '', provincia: '', intl: false, paisIntl: '' },
+        agencia: { razon: 'CUBICAJE S.L.', cif: 'B15563406', dir: 'Av. de los Premios Nobel 57', cp: '28850', pob: 'Torrej\u00f3n de Ardoz' },
+        // TRANSPORTE
+        fechaCarga: '', lugarEntrega: '', fechaEntrega: '',
+        condSel: '', condNombre: '', condDni: '', condTel: '', tractora: '', remolque: '',
+        // AGENCIA DE TRANSPORTE (puede ser TP68 u otra agencia externa)
+        agenciaSel: '',           // nombre seleccionado en el buscador
+        agenciaNombre: '',        // nombre final en el CSV
+        agenciaCif: '',           // CIF final en el CSV
+        agenciaDireccion: ''
+      };
+    }
+
+    // HELPER PARA ECMR
+    function getSessionTS() {
+      if (!window.SESSION_TS) {
+        var d = new Date();
+        var p0 = function (x, len) { return String(x).padStart(len || 2, '0') };
+        var start = new Date(d.getFullYear(), 0, 0);
+        var diff = (d - start) + ((start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
+        var dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+        var yy = String(d.getFullYear()).slice(-2);
+        var ddd = p0(dayOfYear, 3);
+        var hh = p0(d.getHours());
+        var mm = p0(d.getMinutes());
+
+        window.SESSION_TS = yy + ddd + hh + mm;
+      }
+      return window.SESSION_TS;
+    }
+    function updateGroupingCode() {
+      if (!S.empresa || !S.empresa.nombre) return;
+      var emp = D.empresas.find(function (e) { return e.nombre === S.empresa.nombre; });
+      var alias = (emp && emp.alias) ? emp.alias : 'eCMR';
+      S.groupingCode = 'm' + alias + getSessionTS();
+    }
+
+    function freshAlb() {
+      return { id: Date.now() + Math.random(), codigo: '', mercs: [freshMerc()] };
+    }
+    function freshMerc() {
+      return { id: Date.now() + Math.random(), bultos: 1, embalaje: 'Caja', desc: 'Material de embalaje: Cart\u00f3n', peso: 0, carton: true, plastico: false, madera: false, metal: false };
+    }
+
+    var S = freshState();
+    var step = 0;
+    var STEPS = ['Expedici\u00f3n', 'Participantes', 'Transporte', 'Revisi\u00f3n'];
+    var EMBS = ['Caja', 'Palet', 'Bobina', 'Saco', 'Contenedor', 'Granel', 'Otro'];
+
+    // ============================================================
+    // INIT
+    // ============================================================
+    async function init() {
+      var load = async function (p, fb) {
+        try {
+          var r = await fetch(p);
+          if (!r.ok) throw new Error(r.status);
+          return await r.json();
+        } catch (e) {
+          console.warn('No se pudo cargar ' + p + ':', e.message);
+          return fb;
+        }
+      };
+      var res = await Promise.all([
+        load('data/clientes.json', []),
+        load('data/proveedores.json', []),
+        load('data/transportistas.json', []),
+        load('data/empresas.json', []),
+        load('data/almacenes.json', []),
+        load('data/agencias.json', [])
+      ]);
+      D.clientes = res[0];
+      D.proveedores = res[1];
+      D.transportistas = res[2];
+      D.empresas = res[3];
+      D.almacenes = res[4];
+      D.agencias = res[5];
+      // Empresa por defecto: primera de la lista
+      if (D.empresas.length && !S.empresa.nombre) {
+        S.empresaSel = D.empresas[0].nombre;
+        S.empresa = { nombre: D.empresas[0].nombre, cif: D.empresas[0].cif, direccion_completa: D.empresas[0].direccion_completa || '' };
+      }
+      updateGroupingCode();
+      buildStepper();
+      showStep(0);
+    }
+
+    // ============================================================
+    // STEPPER
+    // ============================================================
+    function buildStepper() {
+      var el = document.getElementById('stepper');
+      el.innerHTML = '';
+      STEPS.forEach(function (s, i) {
+        var d = document.createElement('button');
+        d.className = 'step-dot ' + (i < step ? 'done' : i === step ? 'active' : 'pending');
+        d.title = s;
+        if (i < step) {
+          d.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>';
+        } else {
+          d.textContent = i;
+        }
+        var idx = i;
+        d.onclick = function () { if (idx <= step) go(idx); };
+        el.appendChild(d);
+        if (i < STEPS.length - 1) {
+          var ln = document.createElement('div');
+          ln.className = 'step-line ' + (i < step ? 'done' : '');
+          el.appendChild(ln);
+        }
+      });
+      var ctr = document.getElementById('step-counter');
+      if (ctr) ctr.textContent = 'Paso ' + (step + 1) + ' de ' + STEPS.length + ' \u2014 ' + STEPS[step];
+    }
+
+    // ============================================================
+    // NAVEGACI\u00d3N
+    // ============================================================
+    function changeStep(d) {
+      var n = step + d;
+      if (n < 0 || n >= STEPS.length) return;
+      if (d > 0 && !validate()) return;
+      go(n);
+    }
+    function go(n) {
+      document.getElementById('step-' + step).classList.add('hidden');
+      step = n;
+      if (step === 2 && !S.fechaCarga) {
+        var d = new Date();
+        var p0 = function (x) { return String(x).padStart(2, '0') };
+        S.fechaCarga = d.getFullYear() + '-' + p0(d.getMonth() + 1) + '-' + p0(d.getDate()) + 'T' + p0(d.getHours()) + ':' + p0(d.getMinutes());
+        d.setHours(d.getHours() + 2);
+        S.fechaEntrega = d.getFullYear() + '-' + p0(d.getMonth() + 1) + '-' + p0(d.getDate()) + 'T' + p0(d.getHours()) + ':' + p0(d.getMinutes());
+      }
+      // Autorelleno de lugar de entrega si a\u00fan no se defini\u00f3
+      if (step === 2 && !S.lugarEntrega && S.destinatario.nombre) {
+        var partes = [S.destinatario.direccion, S.destinatario.cp && S.destinatario.poblacion ? S.destinatario.cp + ' ' + S.destinatario.poblacion : (S.destinatario.cp || S.destinatario.poblacion)];
+        S.lugarEntrega = partes.filter(Boolean).join(', ');
+      }
+      showStep(step);
+      buildStepper();
+      var bp = document.getElementById('btn-prev');
+      var bn = document.getElementById('btn-next');
+      var bd = document.getElementById('btn-dl');
+      if (bp) bp.style.display = step === 0 ? 'none' : '';
+      if (bn) bn.classList.toggle('hidden', step === STEPS.length - 1);
+      if (bd) bd.classList.toggle('hidden', step !== STEPS.length - 1);
+    }
+    function showStep(n) {
+      var p = document.getElementById('step-' + n);
+      p.classList.remove('hidden');
+      p.classList.add('fade-in');
+      setTimeout(function () { p.classList.remove('fade-in'); }, 350);
+      renderStep(n);
+    }
+
+    // ============================================================
+    // VALIDACI\u00d3N
+    // ============================================================
+    function validate() {
+      function err(m) { toast(m, 'err'); return false; }
+      if (step === 0) {
+        if (!S.empresa.nombre) return err('Selecciona el cargador.');
+        if (!S.almacenSel) return err('Indica el origen de carga.');
+        if (!S.lugarCargaCP) return err('Indica el CP del origen de carga.');
+        if (!S.lugarCargaProvincia) return err('Indica la provincia del origen de carga.');
+        if (!S.lugarCargaLocalidad) return err('Indica la localidad del origen de carga.');
+        if (!S.lugarCargaPais) return err('Indica el pa\u00eds del origen de carga.');
+        if (!S.groupingCode.trim()) return err('Introduce el n\u00famero de eCMR.');
+        for (var i = 0; i < S.albaranes.length; i++) {
+          if (!S.albaranes[i].codigo.trim()) return err('El albar\u00e1n ' + (i + 1) + ' no tiene c\u00f3digo.');
+          for (var j = 0; j < S.albaranes[i].mercs.length; j++) {
+            if (!S.albaranes[i].mercs[j].desc.trim()) return err('La l\u00ednea ' + (j + 1) + ' del albar\u00e1n ' + (i + 1) + ' no tiene descripci\u00f3n.');
+          }
+        }
+      }
+      if (step === 1) {
+        if (!S.destinatario.nombre || !S.destinatario.nombre.trim()) return err('Indica el cliente destinatario.');
+        if (!S.destinatario.cp || !S.destinatario.cp.trim()) return err('Indica el c\u00f3digo postal del destinatario.');
+        if (!S.destinatario.provincia || !S.destinatario.provincia.trim()) return err('Indica la provincia del destinatario.');
+        if (!S.destinatario.poblacion || !S.destinatario.poblacion.trim()) return err('Indica la localidad del destinatario.');
+        var paisDest = S.destinatario.intl ? (S.destinatario.paisIntl || '').trim() : 'Espa\u00f1a';
+        if (!paisDest) return err('Indica el pa\u00eds del destinatario.');
+      }
+      if (step === 2) {
+        if (!S.fechaCarga) return err('Indica la fecha de carga.');
+        if (!S.lugarEntrega) return err('Indica el lugar de entrega.');
+        if (!S.fechaEntrega) return err('Indica la fecha de entrega.');
+        if (!S.condNombre) return err('Indica el transportista.');
+        if (!S.tractora) return err('Indica la matr\u00edcula de la tractora.');
+        if (!S.remolque) return err('Indica la matr\u00edcula del remolque.');
+      }
+      return true;
+    }
+
+    // ============================================================
+    // SETTERS GEN\u00c9RICOS (evita escaping de comillas en HTML)
+    // ============================================================
+    function setField(el) {
+      var k = el.dataset.k;
+      var f = el.dataset.f;
+      S[k][f] = el.type === 'checkbox' ? el.checked : el.value;
+    }
+    function setAgencia(el) { S.agencia[el.dataset.f] = el.value; }
+
+    // ============================================================
+    // RENDER
+    // ============================================================
+    function renderStep(n) {
+      var p = document.getElementById('step-' + n);
+      if (n === 0) p.innerHTML = r0();
+      else if (n === 1) { p.innerHTML = r1(); acBind(); }
+      else if (n === 2) p.innerHTML = r2();
+      else p.innerHTML = r3();
+    }
+
+    // ============================================================
+    // PASO 0: EXPEDICI\u00d3N
+    // (Empresa + Almac\u00e9n + N\u00famero eCMR + Albaranes c/ mercanc\u00edas)
+    // ============================================================
+    function r0() {
+      // Cargador
+      var empOpts = D.empresas.map(function (e) {
+        return '<option value="' + x(e.nombre) + '"' + (S.empresaSel === e.nombre || (!S.empresaSel && S.empresa.nombre === e.nombre) ? ' selected' : '') + '>' + x(e.nombre) + '</option>';
+      }).join('');
+
+      // Almac\u00e9n de carga
+      var almOpts = D.almacenes.map(function (a) {
+        return '<option value="' + x(a.nombre) + '"' + (S.almacenSel === a.nombre ? ' selected' : '') + '>' + x(a.nombre) + '</option>';
+      }).join('');
+
+      // Bloque de albaranes
+      var albsHtml = S.albaranes.map(function (alb, ai) {
+        return rAlbCard(alb, ai);
+      }).join('');
+
+      return '<div class="space-y-6">' +
+
+        // --- Cargador y almac\u00e9n ---
+        '<div>' +
+        '<p class="sec-hdr">&#127970; Cargador y origen de carga</p>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">' +
+        '<div>' +
+        '<label>Cargador <span class="text-red-500">*</span></label>' +
+        '<select onchange="selEmpresa(this.value)">' +
+        '<option value="">-- Selecciona cargador --</option>' +
+        empOpts +
+        '<option value="__otro__"' + (S.empresaSel === '__otro__' ? ' selected' : '') + '>&#9999;&#65039; Otro (escribir manualmente)</option>' +
+        '</select>' +
+        (S.empresaSel === '__otro__' ? '<input type="text" value="' + x(S.empresa.nombre) + '" placeholder="Nombre del cargador..." oninput="S.empresa.nombre=this.value; updateGroupingCode();" class="mt-2"/>' : '') +
+        '</div>' +
+        '<div>' +
+        '<label>CIF empresa</label>' +
+        '<input type="text" value="' + x(S.empresa.cif) + '" oninput="S.empresa.cif=this.value"' +
+        (S.empresaSel === '__otro__' ? '' : ' readonly class="bg-slate-50 text-slate-400 cursor-not-allowed"') + '/>' +
+        '</div>' +
+        '<div class="md:col-span-2">' +
+        '<label>Origen de carga <span class="text-red-500">*</span></label>' +
+        '<select onchange="selAlmacen(this.value)">' +
+        '<option value="">-- Selecciona almac\u00e9n --</option>' +
+        almOpts +
+        '<option value="__otro__"' + (S.almacenCustom ? ' selected' : '') + '>&#9999;&#65039; Otro (escribir manualmente)</option>' +
+        '</select>' +
+        '</div>' +
+        ((S.almacenSel) ?
+          '<div class="md:col-span-2"><label>Direcci\u00f3n (introduce direcci\u00f3n o nombre de proveedor)</label><input type="text" value="' + x(S.lugarCarga) + '" placeholder="Calle, n\u00famero..." oninput="S.lugarCarga=this.value"/></div>' +
+          '<div><label>CP <span class="text-red-500">*</span></label><input type="text" value="' + x(S.lugarCargaCP) + '" oninput="S.lugarCargaCP=this.value"/></div>' +
+          '<div><label>Provincia <span class="text-red-500">*</span></label><input type="text" value="' + x(S.lugarCargaProvincia) + '" oninput="S.lugarCargaProvincia=this.value"/></div>' +
+          '<div><label>Localidad <span class="text-red-500">*</span></label><input type="text" value="' + x(S.lugarCargaLocalidad) + '" oninput="S.lugarCargaLocalidad=this.value"/></div>' +
+          '<div><label>Pa\u00eds <span class="text-red-500">*</span></label><input type="text" value="' + x(S.lugarCargaPais) + '" oninput="S.lugarCargaPais=this.value"/></div>'
+          : '') +
+        '</div>' +
+        '</div>' +
+
+        // --- N\u00famero eCMR ---
+        '<div>' +
+        '<p class="sec-hdr">&#127381; N\u00famero eCMR</p>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">' +
+        '<div>' +
+        '<label>N\u00famero de eCMR <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(S.groupingCode) + '" placeholder="eCMR-2026-108" oninput="S.groupingCode=this.value"/>' +
+        '<p class="text-xs text-slate-400 mt-1">Identificador \u00fanico que agrupa todos los albaranes de este eCMR.</p>' +
+        '</div>' +
+        '<div class="flex items-end"><div class="text-xs text-slate-500 bg-slate-50 rounded-lg p-3 border border-slate-200">' +
+        '<strong>' + S.albaranes.length + '</strong> albar\u00e1n' + (S.albaranes.length !== 1 ? 'es' : '') + ' &bull; ' +
+        '<strong>' + S.albaranes.reduce(function (a, alb) { return a + alb.mercs.reduce(function (b, m) { return b + m.bultos; }, 0); }, 0) + '</strong> bultos &bull; ' +
+        '<strong>' + S.albaranes.reduce(function (a, alb) { return a + alb.mercs.reduce(function (b, m) { return b + m.peso; }, 0); }, 0).toFixed(1) + ' kg</strong>' +
+        '</div></div>' +
+        '</div>' +
+        '</div>' +
+
+        // --- Albaranes ---
+        '<div>' +
+        '<div class="flex justify-between items-center mb-3">' +
+        '<p class="sec-hdr mb-0">&#128230; Albaranes y mercanc\u00edas</p>' +
+        '<button class="btn-g btn-sm" onclick="addAlb()">+ A\u00f1adir albar\u00e1n</button>' +
+        '</div>' +
+        '<p class="text-xs text-slate-500 mb-3">Cada albar\u00e1n es independiente y lleva sus propias l\u00edneas de mercanc\u00eda. Genera <strong>una fila por l\u00ednea</strong> en el CSV.</p>' +
+        albsHtml +
+        '</div>' +
+
+        '</div>';
+    }
+
+    function rAlbCard(alb, ai) {
+      var mercsHtml = alb.mercs.map(function (m, mi) { return rMercRow(alb, m, ai, mi); }).join('');
+      var totalBultos = alb.mercs.reduce(function (a, m) { return a + m.bultos; }, 0);
+      var totalPeso = alb.mercs.reduce(function (a, m) { return a + m.peso; }, 0);
+      return '<div class="alb-card" data-albid="' + alb.id + '">' +
+        '<div class="flex justify-between items-center mb-3">' +
+        '<div class="flex items-center gap-2">' +
+        '<span class="badge b-blue">Albar\u00e1n ' + (ai + 1) + '</span>' +
+        '<span class="text-xs text-slate-400">' + totalBultos + ' bultos &bull; ' + totalPeso.toFixed(1) + ' kg</span>' +
+        '</div>' +
+        (S.albaranes.length > 1 ? '<button class="btn-d" data-albid="' + alb.id + '" onclick="rmAlb(this.dataset.albid)">&#10005; Eliminar</button>' : '') +
+        '</div>' +
+        '<div class="mb-3">' +
+        '<label>C\u00f3digo de albar\u00e1n <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(alb.codigo) + '" placeholder="ALB-2026-001"' +
+        ' data-albid="' + alb.id + '" oninput="setAlbCodigo(this.dataset.albid, this.value)"/>' +
+        '</div>' +
+        '<div class="ml-2 pl-3 border-l-2 border-slate-200">' +
+        '<div class="flex justify-between items-center mb-2">' +
+        '<label style="margin:0;font-size:.65rem;">L\u00edneas de mercanc\u00eda</label>' +
+        '<button class="btn-g btn-sm" data-albid="' + alb.id + '" onclick="addMerc(this.dataset.albid)">+ L\u00ednea</button>' +
+        '</div>' +
+        mercsHtml +
+        '</div>' +
+        '</div>';
+    }
+
+    function rMercRow(alb, m, ai, mi) {
+      return '<div class="merc-row">' +
+        '<div class="flex justify-between items-center mb-2">' +
+        '<span class="badge b-green" style="font-size:.65rem;">L\u00ednea ' + (mi + 1) + '</span>' +
+        (alb.mercs.length > 1 ? '<button class="btn-d" style="padding:.2rem .5rem;font-size:.7rem;" data-albid="' + alb.id + '" data-mid="' + m.id + '" onclick="rmMerc(this.dataset.albid,this.dataset.mid)">&#10005;</button>' : '') +
+        '</div>' +
+        '<div class="grid grid-cols-2 md:grid-cols-4 gap-2">' +
+        '<div><label style="font-size:.65rem;">Bultos</label>' +
+        '<input type="number" min="1" value="' + m.bultos + '"' +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="bultos"' +
+        ' oninput="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,+this.value)"/></div>' +
+        '<div class="md:col-span-2"><label style="font-size:.65rem;">Descripci\u00f3n <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(m.desc) + '" placeholder="Cajas de cart\u00f3n..."' +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="desc"' +
+        ' oninput="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,this.value)"/></div>' +
+        '<div><label style="font-size:.65rem;">Peso kg</label>' +
+        '<input type="number" min="0" step="0.1" value="' + m.peso + '"' +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="peso"' +
+        ' oninput="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,+this.value)"/></div>' +
+        '</div>' +
+        '<div class="flex gap-4 mt-2 flex-wrap">' +
+        '<label style="text-transform:none;letter-spacing:0;font-size:.78rem;display:flex;align-items:center;gap:5px;">' +
+        '<input type="checkbox"' + (m.carton ? ' checked' : '') +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="carton"' +
+        ' onchange="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,this.checked)"/>' +
+        ' &#128230; Cart\u00f3n</label>' +
+        '<label style="text-transform:none;letter-spacing:0;font-size:.78rem;display:flex;align-items:center;gap:5px;">' +
+        '<input type="checkbox"' + (m.plastico ? ' checked' : '') +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="plastico"' +
+        ' onchange="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,this.checked)"/>' +
+        ' &#129692; Pl\u00e1stico</label>' +
+        '<label style="text-transform:none;letter-spacing:0;font-size:.78rem;display:flex;align-items:center;gap:5px;">' +
+        '<input type="checkbox"' + (m.madera ? ' checked' : '') +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="madera"' +
+        ' onchange="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,this.checked)"/>' +
+        ' &#129717; Madera</label>' +
+        '<label style="text-transform:none;letter-spacing:0;font-size:.78rem;display:flex;align-items:center;gap:5px;">' +
+        '<input type="checkbox"' + (m.metal ? ' checked' : '') +
+        ' data-albid="' + alb.id + '" data-mid="' + m.id + '" data-f="metal"' +
+        ' onchange="upM(this.dataset.albid,this.dataset.mid,this.dataset.f,this.checked)"/>' +
+        ' &#9881;&#65039; Metal</label>' +
+        '</div>' +
+        '</div>';
+    }
+
+    // --- Funciones de albaranes y mercanc\u00edas ---
+    function selEmpresa(v) {
+      S.empresaSel = v;
+      if (v === '__otro__') {
+        S.empresa = { nombre: '', cif: '', direccion_completa: '' };
+      } else {
+        var emp = D.empresas.find(function (e) { return e.nombre === v; });
+        if (emp) { S.empresa = { nombre: emp.nombre, cif: emp.cif, direccion_completa: emp.direccion_completa || '' }; }
+        else { S.empresa = { nombre: '', cif: '', direccion_completa: '' }; }
+      }
+      updateGroupingCode();
+      renderStep(0);
+    }
+    function selAlmacen(v) {
+      if (v === '__otro__') {
+        S.almacenSel = '__otro__';
+        S.almacenCustom = true;
+        S.lugarCarga = '';
+        S.lugarCargaCP = '';
+        S.lugarCargaProvincia = '';
+        S.lugarCargaLocalidad = '';
+        S.lugarCargaPais = 'ESPA\u00d1A';
+      } else {
+        S.almacenSel = v;
+        S.almacenCustom = false;
+        var alm = D.almacenes.find(function (a) { return a.nombre === v; });
+        S.lugarCarga = alm ? (alm.direccion_completa || '') : '';
+        S.lugarCargaCP = alm && alm.cp ? alm.cp : '';
+        S.lugarCargaProvincia = alm && alm.Provincia ? alm.Provincia : '';
+        S.lugarCargaLocalidad = alm && alm.Localidad ? alm.Localidad : '';
+        S.lugarCargaPais = alm && alm.Pais ? alm.Pais : 'ESPA\u00d1A';
+      }
+      renderStep(0);
+    }
+    function setAlbCodigo(albid, val) {
+      var alb = S.albaranes.find(function (a) { return String(a.id) === String(albid); });
+      if (alb) alb.codigo = val;
+    }
+    function addAlb() { S.albaranes.push(freshAlb()); renderStep(0); }
+    function rmAlb(albid) {
+      S.albaranes = S.albaranes.filter(function (a) { return String(a.id) !== String(albid); });
+      renderStep(0);
+    }
+    function addMerc(albid) {
+      var alb = S.albaranes.find(function (a) { return String(a.id) === String(albid); });
+      if (alb) { alb.mercs.push(freshMerc()); renderStep(0); }
+    }
+    function rmMerc(albid, mid) {
+      var alb = S.albaranes.find(function (a) { return String(a.id) === String(albid); });
+      if (alb) { alb.mercs = alb.mercs.filter(function (m) { return String(m.id) !== String(mid); }); renderStep(0); }
+    }
+    function upM(albid, mid, f, v) {
+      var alb = S.albaranes.find(function (a) { return String(a.id) === String(albid); });
+      if (!alb) return;
+      var m = alb.mercs.find(function (mm) { return String(mm.id) === String(mid); });
+      if (m) {
+        m[f] = v;
+        if (f === 'carton' || f === 'plastico' || f === 'madera' || f === 'metal') {
+          var t = [];
+          if (m.carton) t.push('Cart\u00f3n');
+          if (m.plastico) t.push('Pl\u00e1stico');
+          var d = [];
+          if (t.length) d.push('Material de embalaje: ' + t.join(', '));
+          if (m.madera) d.push('Pal\u00e9s de madera');
+          if (m.metal) d.push('M\u00e1quina de embalaje');
+          m.desc = d.join(' y ');
+          renderStep(0);
+        }
+      }
+    }
+
+    // ============================================================
+    // PASO 1: PARTICIPANTES (destinatario)
+    // ============================================================
+    function r1() {
+      return '<div class="space-y-8">' +
+        rPart('destinatario', '&#128229; Destinatario', 'Busca cliente...') +
+        '</div>';
+    }
+
+    function rPart(k, tit, ph) {
+      var s = S[k];
+      var pais = s.intl ? (s.paisIntl || '') : 'Espa\u00f1a';
+      var paisRO = s.intl ? '' : ' readonly class="bg-slate-50 text-slate-400"';
+      return '<div>' +
+        '<p class="sec-hdr">' + tit + '</p>' +
+        '<div class="ac-wrap mb-3" id="acw-' + k + '">' +
+        '<label>Buscar en agenda</label>' +
+        '<input type="text" id="aci-' + k + '" placeholder="' + ph + '" autocomplete="off"' +
+        ' data-k="' + k + '"' +
+        ' oninput="onAC(this.dataset.k,this.value)"' +
+        ' onfocus="onAC(this.dataset.k,this.value)"' +
+        ' onclick="onAC(this.dataset.k,this.value)"/>' +
+        '<ul class="ac-list hidden" id="acl-' + k + '"></ul>' +
+        '</div>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-3">' +
+        '<div><label>Cliente <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(s.nombre) + '" data-k="' + k + '" data-f="nombre" oninput="setField(this)"/></div>' +
+        '<div><label>CIF / NIF</label>' +
+        '<input type="text" value="' + x(s.cif) + '" data-k="' + k + '" data-f="cif" oninput="setField(this)"/></div>' +
+        '<div class="md:col-span-2"><label>Direcci\u00f3n</label>' +
+        '<input type="text" value="' + x(s.direccion) + '" data-k="' + k + '" data-f="direccion" oninput="setField(this)"/></div>' +
+        '<div><label>C\u00f3digo Postal <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(s.cp) + '" data-k="' + k + '" data-f="cp" oninput="setField(this)"/></div>' +
+        '<div><label>Localidad <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(s.poblacion) + '" data-k="' + k + '" data-f="poblacion" oninput="setField(this)"/></div>' +
+        '<div><label>Provincia <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(s.provincia) + '" data-k="' + k + '" data-f="provincia" oninput="setField(this)"/></div>' +
+        '<div><label>Pa\u00eds <span class="text-red-500">*</span></label>' +
+        '<div class="flex items-center gap-3">' +
+        '<input type="text" value="' + x(pais) + '"' + paisRO +
+        ' data-k="' + k + '" data-f="paisIntl" oninput="setField(this)"/>' +
+        '<label style="text-transform:none;letter-spacing:0;white-space:nowrap;font-size:.82rem;">' +
+        '<input type="checkbox"' + (s.intl ? ' checked' : '') +
+        ' data-k="' + k + '" onchange="toggleIntl(this.dataset.k,this.checked)"/>' +
+        ' Internacional' +
+        '</label>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    }
+
+    function rAgencia() {
+      var s = S.agencia;
+      return '<div>' +
+        '<p class="sec-hdr">&#128666; Transportista / Agencia</p>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-3">' +
+        '<div><label>Raz\u00f3n Social</label><input type="text" value="' + x(s.razon) + '" data-f="razon" oninput="setAgencia(this)"/></div>' +
+        '<div><label>CIF / NIF</label><input type="text" value="' + x(s.cif) + '" data-f="cif" oninput="setAgencia(this)"/></div>' +
+        '<div class="md:col-span-2"><label>Direcci\u00f3n</label><input type="text" value="' + x(s.dir) + '" data-f="dir" oninput="setAgencia(this)"/></div>' +
+        '<div><label>CP</label><input type="text" value="' + x(s.cp) + '" data-f="cp" oninput="setAgencia(this)"/></div>' +
+        '<div><label>Poblaci\u00f3n</label><input type="text" value="' + x(s.pob) + '" data-f="pob" oninput="setAgencia(this)"/></div>' +
+        '</div>' +
+        '</div>';
+    }
+
+    function toggleIntl(k, v) {
+      S[k].intl = v;
+      if (!v) S[k].paisIntl = '';
+      renderStep(1); acBind();
+    }
+
+    // Autocomplete (solo destinatario ahora)
+    function onAC(k, val) {
+      var list = document.getElementById('acl-' + k);
+      if (!list) return;
+      var all = D.clientes.concat(D.proveedores);
+      var q = val.toLowerCase().trim();
+      var hits = q ? all.filter(function (c) { return c.nombre.toLowerCase().indexOf(q) >= 0; }) : all;
+      if (hits.length === 0) { list.classList.add('hidden'); return; }
+      list.innerHTML = '';
+      hits.slice(0, 20).forEach(function (c) {
+        var li = document.createElement('li');
+        li.innerHTML = x(c.nombre) + ' <span class="text-slate-400 text-xs">&mdash; ' + x(c.poblacion) + '</span>';
+        li.onclick = function () { selC(k, c); };
+        list.appendChild(li);
+      });
+      list.classList.remove('hidden');
+    }
+    function selC(k, c) {
+      S[k].nombre = c.nombre || '';
+      S[k].cif = c.cif || '';
+      S[k].direccion = c.direccion || '';
+      S[k].cp = c.cp || '';
+      S[k].poblacion = c.poblacion || '';
+      S[k].provincia = c.provincia || '';
+      var p = c.pais || 'Espa\u00f1a';
+      S[k].intl = p.toLowerCase() !== 'espa\u00f1a';
+      S[k].paisIntl = p;
+      // Si se elige destinatario, autorellena lugar de entrega
+      if (k === 'destinatario') {
+        var partes = [c.direccion, c.cp && c.poblacion ? c.cp + ' ' + c.poblacion : (c.cp || c.poblacion)];
+        S.lugarEntrega = partes.filter(Boolean).join(', ');
+      }
+      var lst = document.getElementById('acl-' + k);
+      if (lst) lst.classList.add('hidden');
+      renderStep(1); acBind();
+    }
+    function acBind() {
+      // Compatibilidad con llamadas previas
+    }
+
+    // ============================================================
+    // GESTI\u00d3N GLOBAL DE BUSCADORES (Click fuera y tecla ESC)
+    // ============================================================
+    function closeAllAC() {
+      document.querySelectorAll('.ac-list').forEach(function (el) {
+        el.classList.add('hidden');
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var wrap = e.target && e.target.closest ? e.target.closest('.ac-wrap') : null;
+      document.querySelectorAll('.ac-wrap').forEach(function (w) {
+        if (w !== wrap) {
+          var lst = w.querySelector('.ac-list');
+          if (lst) lst.classList.add('hidden');
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        closeAllAC();
+        if (document.activeElement && document.activeElement.blur && document.activeElement.closest && document.activeElement.closest('.ac-wrap')) {
+          document.activeElement.blur();
+        }
+      }
+    });
+
+    // ============================================================
+    // PASO 2: TRANSPORTE
+    // ============================================================
+    function r2() {
+      var trv = D.transportistas.find(function (t) { return t.nombre === S.condSel; });
+      var obs = (trv && trv.observaciones)
+        ? '<div class="info-box mt-2">&#9888;&#65039; ' + x(trv.observaciones) + '</div>'
+        : '';
+
+      // Agencia seleccionada \u2014 info box si es TP68
+      var agInfoBox = '';
+      if (S.agenciaNombre) {
+        var isTP68 = S.agenciaNombre === TP68.razon;
+        agInfoBox = '<div class="info-box mt-2">' +
+          (isTP68 ? '&#128666; Flota propia (TP68) \u2014 ' : '&#128666; ') +
+          x(S.agenciaNombre) + ' &bull; CIF: ' + x(S.agenciaCif) + '</div>';
+      }
+
+      return '<div class="space-y-6">' +
+        '<div>' +
+        '<p class="sec-hdr">&#128205; Fechas</p>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-3">' +
+        '<div>' +
+        '<label>Fecha y hora de carga <span class="text-red-500">*</span></label>' +
+        '<input type="datetime-local" value="' + S.fechaCarga + '" oninput="S.fechaCarga=this.value"/>' +
+        '<p class="text-xs text-slate-400 mt-1">Origen: ' + x(S.lugarCarga || '(no definido)') + '</p>' +
+        '</div>' +
+        '<div>' +
+        '<label>Fecha y hora de entrega <span class="text-red-500">*</span></label>' +
+        '<input type="datetime-local" value="' + S.fechaEntrega + '" oninput="S.fechaEntrega=this.value"/>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div>' +
+        '<p class="sec-hdr">&#128205; Entrega</p>' +
+        '<div>' +
+        '<label>Lugar de entrega <span class="text-red-500">*</span></label>' +
+        '<input type="text" value="' + x(S.lugarEntrega) + '" placeholder="C/ Serrablo 102, 22600 Sabi\u00f1\u00e1nigo" oninput="S.lugarEntrega=this.value"/>' +
+        (S.destinatario.nombre
+          ? '<p class="text-xs text-slate-400 mt-1">Destinatario: <strong>' + x(S.destinatario.nombre) + '</strong></p>'
+          : '<p class="text-xs text-amber-500 mt-1">&#9888; Rellena primero el destinatario (Paso 1) para autorelleno.</p>') +
+        '</div>' +
+        '</div>' +
+        '<div>' +
+        '<p class="sec-hdr">&#128100; Transportista</p>' +
+        '<div class="ac-wrap mb-3" id="acw-trans">' +
+        '<label>Buscar transportista</label>' +
+        '<input type="text" id="aci-trans" placeholder="Busca por nombre..." autocomplete="off"' +
+        ' oninput="onAC_trans(this.value)" onfocus="onAC_trans(this.value)" onclick="onAC_trans(this.value)"/>' +
+        '<ul class="ac-list hidden" id="acl-trans"></ul>' +
+        '</div>' +
+        obs +
+        '<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">' +
+        '<div><label>Nombre transportista <span class="text-red-500">*</span></label><input type="text" value="' + x(S.condNombre) + '" oninput="S.condNombre=this.value"/></div>' +
+        '<div><label>DNI transportista</label><input type="text" value="' + x(S.condDni) + '" oninput="S.condDni=this.value"/></div>' +
+        '<div><label>Tel\u00e9fono</label><input type="text" value="' + x(S.condTel) + '" oninput="S.condTel=this.value"/></div>' +
+        '</div>' +
+        '</div>' +
+        '<div>' +
+        '<p class="sec-hdr">&#128666; Matr\u00edculas</p>' +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-3">' +
+        '<div><label>Tractora <span class="text-red-500">*</span></label><input type="text" value="' + x(S.tractora) + '" placeholder="2812-JTB" oninput="S.tractora=this.value"/></div>' +
+        '<div><label>Remolque <span class="text-red-500">*</span></label><input type="text" value="' + x(S.remolque) + '" placeholder="R-0181-BDF" oninput="S.remolque=this.value"/></div>' +
+        '</div>' +
+        '</div>' +
+        '<div>' +
+        '<p class="sec-hdr">&#127970; Agencia / Empresa de transporte</p>' +
+        '<p class="text-xs text-slate-500 mb-2">Si el conductor es de TP68 (flota propia), se rellena autom\u00e1ticamente. Para agencias externas, busca por nombre.</p>' +
+        '<div class="ac-wrap mb-2" id="acw-agencia">' +
+        '<label>Buscar agencia</label>' +
+        '<input type="text" id="aci-agencia" placeholder="LimaLog, Galitrans, Dachser..." autocomplete="off"' +
+        ' oninput="onAC_agencia(this.value)" onfocus="onAC_agencia(this.value)" onclick="onAC_agencia(this.value)"/>' +
+        '<ul class="ac-list hidden" id="acl-agencia"></ul>' +
+        '</div>' +
+        agInfoBox +
+        '<div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">' +
+        '<div><label>Raz\u00f3n social agencia</label>' +
+        '<input type="text" value="' + x(S.agenciaNombre) + '" oninput="S.agenciaNombre=this.value"/></div>' +
+        '<div><label>CIF agencia</label>' +
+        '<input type="text" value="' + x(S.agenciaCif) + '" oninput="S.agenciaCif=this.value"/></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    }
+
+    function selTrans(v) {
+      S.condSel = v;
+      if (v && v !== '__otro__') {
+        var t = D.transportistas.find(function (tt) { return tt.nombre === v; });
+        if (t) {
+          S.condNombre = t.nombre || '';
+          S.condDni = t.dni || '';
+          S.condTel = String(t.telefono || '');
+          S.tractora = (t.tractora && t.tractora !== '-') ? t.tractora : '';
+          S.remolque = t.remolque || '';
+          // Auto-rellenar agencia desde t.agencia
+          if (t.agencia) {
+            var a = D.agencias.find(function (ag) { return ag.nombre === t.agencia; }) || { nombre: t.agencia, cif: '', direccion: '' };
+            S.agenciaSel = a.nombre;
+            S.agenciaNombre = a.nombre;
+            S.agenciaCif = a.cif || '';
+            S.agenciaDireccion = (a.direccion || '') + (a.cp ? ', ' + a.cp : '') + (a.poblacion ? ' ' + a.poblacion : '');
+            S.agencia.razon = a.nombre;
+            S.agencia.cif = S.agenciaCif;
+            S.agencia.dir = S.agenciaDireccion;
+          }
+        }
+      } else if (v === '__otro__') {
+        S.condNombre = ''; S.condDni = ''; S.condTel = ''; S.tractora = ''; S.remolque = '';
+        S.agenciaSel = ''; S.agenciaNombre = ''; S.agenciaCif = ''; S.agenciaDireccion = '';
+      }
+      renderStep(2);
+    }
+
+    // Autocomplete de agencias externas
+    function onAC_agencia(val) {
+      var list = document.getElementById('acl-agencia');
+      if (!list) return;
+      var q = val.toLowerCase().trim();
+      var hits = q ? D.agencias.filter(function (a) { return a.nombre.toLowerCase().indexOf(q) >= 0; }) : D.agencias;
+      if (hits.length === 0) { list.classList.add('hidden'); return; }
+      list.innerHTML = '';
+      hits.slice(0, 15).forEach(function (a) {
+        var li = document.createElement('li');
+        li.innerHTML = x(a.nombre) + ' <span class="text-slate-400 text-xs">&mdash; ' + x(a.cif) + '</span>';
+        li.onclick = function () {
+          S.agenciaSel = a.nombre;
+          S.agenciaNombre = a.nombre;
+          S.agenciaCif = a.cif;
+          S.agenciaDireccion = a.direccion + (a.cp ? ', ' + a.cp : '') + (a.poblacion ? ' ' + a.poblacion : '');
+          // Sincronizar tambi\u00e9n S.agencia (campo transportista en CSV)
+          S.agencia.razon = a.nombre;
+          S.agencia.cif = a.cif;
+          S.agencia.dir = S.agenciaDireccion;
+          list.classList.add('hidden');
+          renderStep(2);
+        };
+        list.appendChild(li);
+      });
+      list.classList.remove('hidden');
+    }
+
+    // Autocomplete de transportistas
+    function onAC_trans(val) {
+      var list = document.getElementById('acl-trans');
+      if (!list) return;
+      var q = val.toLowerCase().trim();
+      var hits = q ? D.transportistas.filter(function (t) { return t.nombre.toLowerCase().indexOf(q) >= 0; }) : D.transportistas;
+      list.innerHTML = '';
+      hits.slice(0, 15).forEach(function (t) {
+        var li = document.createElement('li');
+        li.innerHTML = x(t.nombre) + (t.dni ? ' <span class="text-slate-400 text-xs">&mdash; ' + x(t.dni) + '</span>' : '');
+        li.onclick = function () {
+          selTrans(t.nombre);
+          list.classList.add('hidden');
+        };
+        list.appendChild(li);
+      });
+      var liOtro = document.createElement('li');
+      liOtro.innerHTML = '&#9999;&#65039; Otro (manual)';
+      liOtro.onclick = function () {
+        selTrans('__otro__');
+        list.classList.add('hidden');
+      };
+      list.appendChild(liOtro);
+      list.classList.remove('hidden');
+    }
+
+    // ============================================================
+    // PASO 3: REVISI\u00d3N Y DESCARGA
+    // ============================================================
+    function r3() {
+      var rows = buildRows();
+      var hdrs = csvH();
+      var tAlb = S.albaranes.length;
+      var tB = S.albaranes.reduce(function (a, alb) { return a + alb.mercs.reduce(function (b, m) { return b + m.bultos; }, 0); }, 0);
+      var tP = S.albaranes.reduce(function (a, alb) { return a + alb.mercs.reduce(function (b, m) { return b + m.peso; }, 0); }, 0);
+      var thH = hdrs.map(function (h) { return '<th>' + h + '</th>'; }).join('');
+      var tbH = rows.map(function (r) {
+        return '<tr>' + hdrs.map(function (h) { return '<td>' + x(r[h] !== undefined ? r[h] : '') + '</td>'; }).join('') + '</tr>';
+      }).join('');
+
+      return '<div>' +
+        '<p class="sec-hdr">&#9989; Revisi\u00f3n del eCMR</p>' +
+        '<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">' +
+        '<div class="rounded-xl p-4 bg-blue-50 border border-blue-100 text-center"><div class="text-lg font-bold text-blue-700 break-all">' + x(S.groupingCode) + '</div><div class="text-xs text-blue-500 mt-1">eCMR</div></div>' +
+        '<div class="rounded-xl p-4 bg-green-50 border border-green-100 text-center"><div class="text-2xl font-bold text-green-700">' + tAlb + '</div><div class="text-xs text-green-500 mt-1">Albaranes</div></div>' +
+        '<div class="rounded-xl p-4 bg-amber-50 border border-amber-100 text-center"><div class="text-2xl font-bold text-amber-700">' + tB + '</div><div class="text-xs text-amber-500 mt-1">Bultos totales</div></div>' +
+        '<div class="rounded-xl p-4 bg-purple-50 border border-purple-100 text-center"><div class="text-2xl font-bold text-purple-700">' + tP.toFixed(1) + ' kg</div><div class="text-xs text-purple-500 mt-1">Peso bruto</div></div>' +
+        '</div>' +
+        '<p class="text-xs text-slate-500 mb-2">El CSV tendr\u00e1 <strong>' + rows.length + ' fila' + (rows.length !== 1 ? 's' : '') + '</strong> (' + tAlb + ' albar\u00e1n' + (tAlb !== 1 ? 'es' : '') + ' \u00d7 sus propias l\u00edneas de mercanc\u00eda).</p>' +
+        '<div class="overflow-x-auto rounded-xl border border-slate-200"><table class="preview-table"><thead><tr>' + thH + '</tr></thead><tbody>' + tbH + '</tbody></table></div>' +
+        '</div>';
+    }
+
+    // ============================================================
+    // CSV
+    // ============================================================
+    function csvH() {
+      return [
+        'expedition_code', 'expedition_name', 'grouping_code', 'fulltruck_load',
+        'business_id', 'zone_id',
+        'load_nearly_planned_datetime', 'delivery_nearly_planned_datetime',
+        'product_type', 'expected_weight', 'expected_volume',
+        'expected_units', 'expected_package_number',
+        'load_internal_code', 'load_name', 'load_address', 'load_postal_code',
+        'load_city', 'load_province', 'load_country',
+        'delivery_internal_code', 'delivery_name', 'delivery_address',
+        'delivery_postal_code', 'delivery_city', 'delivery_province', 'delivery_country',
+        'receiver_id', 'receiver_cif', 'receiver_name', 'receiver_address',
+        'receiver_phone_number', 'receiver_email',
+        'driver_id', 'driver_name', 'agency_cif', 'agency_desc',
+        'registration_one', 'registration_two', 'registration_three',
+        'shipper_id', 'shipper_cif', 'shipper_desc', 'shipper_address',
+        'loader_id', 'loader_cif', 'loader_name', 'loader_address'
+      ];
+    }
+
+    function fdt(v) {
+      if (!v) return '';
+      var d = new Date(v);
+      function p(n) { return String(n).padStart(2, '0'); }
+      return p(d.getDate()) + '/' + p(d.getMonth() + 1) + '/' + d.getFullYear() + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+    }
+
+    // CLAVE: cada albar\u00e1n itera SOLO sus propias mercs \u2192 sin duplicados
+    function buildRows() {
+      var rows = [];
+      var dest = S.destinatario;
+      var emp = S.empresa;
+      var pDest = dest.intl ? (dest.paisIntl.toUpperCase() === 'ESPA\u00d1A' ? 'ES' : dest.paisIntl.toUpperCase()) : 'ES';
+      // Agencia: usar lo seleccionado, o TP68 si hay conductor interno, o la agencia del state
+      var agNombre = S.agenciaNombre || S.agencia.razon;
+      var agCif = S.agenciaCif || S.agencia.cif;
+
+      S.albaranes.forEach(function (alb) {
+        alb.mercs.forEach(function (m) {
+          rows.push({
+            expedition_code: alb.codigo.trim(),
+            expedition_name: alb.codigo.trim(),
+            grouping_code: S.groupingCode,
+            fulltruck_load: 'True',
+            business_id: 'DEFAULT',
+            zone_id: 'DEFAULT',
+            load_nearly_planned_datetime: fdt(S.fechaCarga),
+            delivery_nearly_planned_datetime: fdt(S.fechaEntrega),
+            product_type: (function(mm){var tt=[];if(mm.carton)tt.push('Cart\u00f3n');if(mm.plastico)tt.push('Pl\u00e1stico');if(mm.madera)tt.push('Madera');if(mm.metal)tt.push('Metal');return tt.join('|');})(m),
+            expected_weight: m.peso.toFixed(1),
+            expected_volume: '',
+            expected_units: m.bultos,
+            expected_package_number: m.bultos,
+            load_internal_code: S.almacenSel === '__otro__' ? 'CB01' : S.almacenSel,
+            load_name: S.almacenSel === '__otro__' ? S.lugarCarga : S.almacenSel,
+            load_address: S.lugarCarga,
+            load_postal_code: S.lugarCargaCP || '',
+            load_city: S.lugarCargaLocalidad || '',
+            load_province: S.lugarCargaProvincia || '',
+            load_country: (S.lugarCargaPais || 'ESPA\u00d1A').toUpperCase(),
+            delivery_internal_code: dest.nombre,
+            delivery_name: dest.nombre,
+            delivery_address: dest.direccion,
+            delivery_postal_code: dest.cp,
+            delivery_city: dest.poblacion,
+            delivery_province: dest.provincia,
+            delivery_country: pDest,
+            receiver_id: dest.nombre,
+            receiver_cif: dest.cif,
+            receiver_name: dest.nombre,
+            receiver_address: dest.direccion + ', ' + dest.cp + ' ' + dest.poblacion,
+            receiver_phone_number: '',
+            receiver_email: '',
+            driver_id: S.condDni,
+            driver_name: S.condNombre,
+            agency_cif: agCif,
+            agency_desc: agNombre,
+            registration_one: S.tractora,
+            registration_two: S.remolque,
+            registration_three: '',
+            shipper_id: emp.nombre,
+            shipper_cif: emp.cif,
+            shipper_desc: emp.nombre,
+            shipper_address: emp.direccion_completa || '',
+            loader_id: emp.nombre,
+            loader_cif: emp.cif,
+            loader_name: emp.nombre,
+            loader_address: S.lugarCarga
+          });
+        });
+      });
+      return rows;
+    }
+
+    function downloadCSV() {
+      var rows = buildRows();
+      if (!rows.length) { toast('No hay datos para exportar', 'err'); return; }
+      var hdrs = csvH();
+      var BOM = '\uFEFF';
+      var lines = rows.map(function (r) {
+        return hdrs.map(function (h) {
+          var v = String(r[h] !== undefined ? r[h] : '');
+          if (v.indexOf(';') >= 0 || v.indexOf('"') >= 0 || v.indexOf('\n') >= 0) {
+            return '"' + v.replace(/"/g, '""') + '"';
+          }
+          return v;
+        }).join(';');
+      });
+      var csv = BOM + [hdrs.join(';')].concat(lines).join('\r\n');
+      var filename = 'eCMR_' + (S.groupingCode ? S.groupingCode.replace(/[^a-zA-Z0-9_-]/g, '_') : 'export') + '_' + new Date().toISOString().slice(0, 10) + '.csv';
+      var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.setAttribute('download', filename);
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(function () {
+        if (a.parentNode) a.parentNode.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 500);
+      toast('CSV descargado correctamente', 'ok');
+    }
+
+    // ============================================================
+    // LIMPIAR
+    // ============================================================
+    function clearAll() {
+      if (!confirm('\u00bfLimpiar todos los campos?')) return;
+      S = freshState();
+      window.SESSION_TS = null;
+      if (D.empresas.length) {
+        S.empresaSel = D.empresas[0].nombre;
+        S.empresa = { nombre: D.empresas[0].nombre, cif: D.empresas[0].cif, direccion_completa: D.empresas[0].direccion_completa || '' };
+      }
+      updateGroupingCode();
+      go(0);
+      toast('Formulario limpiado', 'ok');
+    }
+
+    // ============================================================
+    // TOAST / ESCAPE HTML
+    // ============================================================
+    function toast(msg, t) {
+      var c = { ok: '#10b981', err: '#ef4444', info: '#3b82f6' };
+      var el = document.createElement('div');
+      el.style.cssText = 'position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;background:' +
+        (c[t] || c.info) + ';color:#fff;padding:.75rem 1.25rem;border-radius:.75rem;' +
+        'font-size:.85rem;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:fadeSlide .3s ease;';
+      el.textContent = msg;
+      document.body.appendChild(el);
+      setTimeout(function () { el.remove(); }, 3500);
+    }
+    function x(s) {
+      return String(s !== undefined && s !== null ? s : '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ============================================================
+    // ARRANQUE
+    // ============================================================
+    var bp = document.getElementById('btn-prev');
+    if (bp) bp.style.display = 'none';
+    init();
+  </script>
+</body>
+
+</html>
