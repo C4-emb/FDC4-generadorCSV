@@ -1674,12 +1674,23 @@
     "pais": "España"
   },
   {
-    "nombre": "Pull & Bear Logística, S.A.",
+    "nombre": "Pull & Bear Logística, S.A. Narón",
     "cif": "",
     "direccion": "Polígono Industrial Río do Pozo, Avda. Gonzalo Navarro",
     "cp": "15570",
     "poblacion": "Narón",
     "provincia": "A Coruña",
+    "pais": "España"
+  },
+  {
+    "nombre": "Pull & Bear Logística, S.A. Cabanillas",
+    "cif": "",
+    "nombre": "Zara Home Logística, S.A. -Cabanillas",
+    "cif": "",
+    "direccion": "C/ Francisco Medina y Mendoza, Parcela 1 (Pol. Ind. del Henares)",
+    "cp": "19071",
+    "poblacion": "Guadalajara",
+    "provincia": "Guadalajara",
     "pais": "España"
   },
   {
