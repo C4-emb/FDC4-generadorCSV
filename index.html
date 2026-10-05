@@ -217,7 +217,7 @@
       border-bottom: 1px solid #f1f5f9;
     }
 
-    .ac-list li:hover {
+    .ac-list li:hover, .ac-list li.ac-active {
       background: #e0f2fe;
     }
 
@@ -698,6 +698,15 @@
         '<option value="__otro__"' + (S.almacenCustom ? ' selected' : '') + '>&#9999;&#65039; Otro (escribir manualmente)</option>' +
         '</select>' +
         '</div>' +
+        ((S.almacenSel === '__otro__') ? 
+          '<div class="md:col-span-2 ac-wrap" id="acw-prov">' +
+          '<label>Buscar proveedor</label>' +
+          '<input type="text" id="aci-prov" placeholder="Buscar proveedor..." autocomplete="off"' +
+          ' oninput="onACProv(this.value)"' +
+          ' onfocus="onACProv(this.value)"' +
+          ' onclick="onACProv(this.value)"/>' +
+          '<ul class="ac-list hidden" id="acl-prov"></ul>' +
+          '</div>' : '') +
         ((S.almacenSel) ?
           '<div class="md:col-span-2"><label>Direcci\u00f3n (introduce direcci\u00f3n o nombre de proveedor)</label><input type="text" value="' + x(S.lugarCarga) + '" placeholder="Calle, n\u00famero..." oninput="S.lugarCarga=this.value"/></div>' +
           '<div><label>CP <span class="text-red-500">*</span></label><input type="text" value="' + x(S.lugarCargaCP) + '" oninput="S.lugarCargaCP=this.value"/></div>' +
@@ -989,6 +998,35 @@
       if (lst) lst.classList.add('hidden');
       renderStep(1); acBind();
     }
+    
+    // Autocomplete para proveedores en Origen de Carga
+    function onACProv(val) {
+      var list = document.getElementById('acl-prov');
+      if (!list) return;
+      var all = D.proveedores;
+      var q = val.toLowerCase().trim();
+      var hits = q ? all.filter(function (c) { return c.nombre.toLowerCase().indexOf(q) >= 0; }) : all;
+      if (hits.length === 0) { list.classList.add('hidden'); return; }
+      list.innerHTML = '';
+      hits.slice(0, 20).forEach(function (c) {
+        var li = document.createElement('li');
+        li.innerHTML = x(c.nombre) + ' <span class="text-slate-400 text-xs">&mdash; ' + x(c.poblacion) + '</span>';
+        li.onclick = function () { selProv(c); };
+        list.appendChild(li);
+      });
+      list.classList.remove('hidden');
+    }
+    function selProv(c) {
+      S.lugarCarga = (c.nombre ? c.nombre + ' - ' : '') + (c.direccion || '');
+      S.lugarCargaCP = c.cp || '';
+      S.lugarCargaLocalidad = c.poblacion || '';
+      S.lugarCargaProvincia = c.provincia || '';
+      S.lugarCargaPais = c.pais || 'ESPA\u00d1A';
+      var lst = document.getElementById('acl-prov');
+      if (lst) lst.classList.add('hidden');
+      renderStep(0);
+    }
+
     function acBind() {
       // Compatibilidad con llamadas previas
     }
@@ -1017,6 +1055,35 @@
         closeAllAC();
         if (document.activeElement && document.activeElement.blur && document.activeElement.closest && document.activeElement.closest('.ac-wrap')) {
           document.activeElement.blur();
+        }
+      }
+      
+      var wrap = document.activeElement && document.activeElement.closest ? document.activeElement.closest('.ac-wrap') : null;
+      if (wrap) {
+        var lst = wrap.querySelector('.ac-list');
+        if (lst && !lst.classList.contains('hidden')) {
+          var items = lst.querySelectorAll('li');
+          if (items.length === 0) return;
+          var activeIdx = -1;
+          for (var i = 0; i < items.length; i++) {
+            if (items[i].classList.contains('ac-active')) { activeIdx = i; break; }
+          }
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (activeIdx >= 0) items[activeIdx].classList.remove('ac-active');
+            activeIdx = (activeIdx + 1) % items.length;
+            items[activeIdx].classList.add('ac-active');
+            items[activeIdx].scrollIntoView({block: 'nearest'});
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (activeIdx >= 0) items[activeIdx].classList.remove('ac-active');
+            activeIdx = activeIdx <= 0 ? items.length - 1 : activeIdx - 1;
+            items[activeIdx].classList.add('ac-active');
+            items[activeIdx].scrollIntoView({block: 'nearest'});
+          } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (activeIdx >= 0) items[activeIdx].click();
+          }
         }
       }
     });
