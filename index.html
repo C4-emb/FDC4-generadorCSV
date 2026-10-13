@@ -440,6 +440,7 @@
         condSel: '', condNombre: '', condDni: '', condTel: '', tractora: '', remolque: '',
         // AGENCIA DE TRANSPORTE (puede ser TP68 u otra agencia externa)
         agenciaSel: '',           // nombre seleccionado en el buscador
+        agenciaId: '',            // id de la agencia en agencias.json para el CSV
         agenciaNombre: '',        // nombre final en el CSV
         agenciaCif: '',           // CIF final en el CSV
         agenciaDireccion: ''
@@ -1100,7 +1101,7 @@
       // Agencia seleccionada \u2014 info box si es TP68
       var agInfoBox = '';
       if (S.agenciaNombre) {
-        var isTP68 = S.agenciaNombre === TP68.razon;
+        var isTP68 = S.agenciaId === 'TP68' || S.agenciaNombre === TP68.razon || S.agenciaCif === TP68.cif;
         agInfoBox = '<div class="info-box mt-2">' +
           (isTP68 ? '&#128666; Flota propia (TP68) \u2014 ' : '&#128666; ') +
           x(S.agenciaNombre) + ' &bull; CIF: ' + x(S.agenciaCif) + '</div>';
@@ -1185,11 +1186,17 @@
           S.remolque = t.remolque || '';
           // Auto-rellenar agencia desde t.agencia
           if (t.agencia) {
-            var a = D.agencias.find(function (ag) { return ag.nombre === t.agencia; }) || { nombre: t.agencia, cif: '', direccion: '' };
+            var a = D.agencias.find(function (ag) {
+              return ag.id === t.agencia || ag.nombre === t.agencia ||
+                (ag.id && ag.id.toLowerCase() === (t.agencia || '').toLowerCase()) ||
+                (ag.nombre && ag.nombre.toLowerCase() === (t.agencia || '').toLowerCase());
+            }) || { id: t.agencia, nombre: t.agencia, cif: '', direccion: '' };
             S.agenciaSel = a.nombre;
+            S.agenciaId = a.id || '';
             S.agenciaNombre = a.nombre;
             S.agenciaCif = a.cif || '';
             S.agenciaDireccion = (a.direccion || '') + (a.cp ? ', ' + a.cp : '') + (a.poblacion ? ' ' + a.poblacion : '');
+            S.agencia.id = S.agenciaId;
             S.agencia.razon = a.nombre;
             S.agencia.cif = S.agenciaCif;
             S.agencia.dir = S.agenciaDireccion;
@@ -1197,7 +1204,8 @@
         }
       } else if (v === '__otro__') {
         S.condNombre = ''; S.condDni = ''; S.condTel = ''; S.tractora = ''; S.remolque = '';
-        S.agenciaSel = ''; S.agenciaNombre = ''; S.agenciaCif = ''; S.agenciaDireccion = '';
+        S.agenciaSel = ''; S.agenciaId = ''; S.agenciaNombre = ''; S.agenciaCif = ''; S.agenciaDireccion = '';
+        S.agencia.id = '';
       }
       renderStep(2);
     }
@@ -1207,7 +1215,10 @@
       var list = document.getElementById('acl-agencia');
       if (!list) return;
       var q = val.toLowerCase().trim();
-      var hits = q ? D.agencias.filter(function (a) { return a.nombre.toLowerCase().indexOf(q) >= 0; }) : D.agencias;
+      var hits = q ? D.agencias.filter(function (a) {
+        return (a.nombre && a.nombre.toLowerCase().indexOf(q) >= 0) ||
+               (a.id && a.id.toLowerCase().indexOf(q) >= 0);
+      }) : D.agencias;
       if (hits.length === 0) { list.classList.add('hidden'); return; }
       list.innerHTML = '';
       hits.slice(0, 15).forEach(function (a) {
@@ -1215,10 +1226,12 @@
         li.innerHTML = x(a.nombre) + ' <span class="text-slate-400 text-xs">&mdash; ' + x(a.cif) + '</span>';
         li.onclick = function () {
           S.agenciaSel = a.nombre;
+          S.agenciaId = a.id || '';
           S.agenciaNombre = a.nombre;
           S.agenciaCif = a.cif;
           S.agenciaDireccion = a.direccion + (a.cp ? ', ' + a.cp : '') + (a.poblacion ? ' ' + a.poblacion : '');
           // Sincronizar tambi\u00e9n S.agencia (campo transportista en CSV)
+          S.agencia.id = a.id || '';
           S.agencia.razon = a.nombre;
           S.agencia.cif = a.cif;
           S.agencia.dir = S.agenciaDireccion;
@@ -1299,7 +1312,7 @@
         'delivery_postal_code', 'delivery_city', 'delivery_province', 'delivery_country',
         'receiver_id', 'receiver_cif', 'receiver_name', 'receiver_address',
         'receiver_phone_number', 'receiver_email',
-        'driver_id', 'driver_name', 'agency_cif', 'agency_desc',
+        'driver_id', 'driver_name', 'agency_id', 'agency_cif', 'agency_desc',
         'registration_one', 'registration_two', 'registration_three',
         'shipper_id', 'shipper_cif', 'shipper_desc', 'shipper_address',
         'loader_id', 'loader_cif', 'loader_name', 'loader_address'
@@ -1322,6 +1335,16 @@
       // Agencia: usar lo seleccionado, o TP68 si hay conductor interno, o la agencia del state
       var agNombre = S.agenciaNombre || S.agencia.razon;
       var agCif = S.agenciaCif || S.agencia.cif;
+      var agId = S.agenciaId || S.agencia.id || (function () {
+        var nom = agNombre;
+        if (!nom) return '';
+        var found = D.agencias.find(function (ag) {
+          return ag.id === nom || ag.nombre === nom ||
+            (ag.id && ag.id.toLowerCase() === nom.toLowerCase()) ||
+            (ag.nombre && ag.nombre.toLowerCase() === nom.toLowerCase());
+        });
+        return found ? (found.id || '') : '';
+      })();
 
       S.albaranes.forEach(function (alb) {
         alb.mercs.forEach(function (m) {
@@ -1361,6 +1384,7 @@
             receiver_email: '',
             driver_id: S.condDni,
             driver_name: S.condNombre,
+            agency_id: agId,
             agency_cif: agCif,
             agency_desc: agNombre,
             registration_one: S.tractora,
